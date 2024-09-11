@@ -44,6 +44,7 @@
 		userName = "Jan Jaworski";
 		userEmail = "jaworek3211@gmail.com";
 		extraConfig = {
+			core.editor = "/etc/profiles/per-user/john/bin/nvim";
 			push.autoSetupRemote = true;
 		};
 	};
