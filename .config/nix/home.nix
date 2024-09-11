@@ -1,5 +1,3 @@
-# home.nix
-
 { config, pkgs, lib, ... }:
 
 {
