@@ -21,9 +21,21 @@
     raycast
     spotify
     vscode
-    maccy
     neovim
     git
+    karabiner-elements
+    discord
+    synology-drive-client
+    tmux
+    yt-dlp
+    go
+    bun
+    ansible
+    darwin.xcode_15_1
+    #signal-desktop
+    #enpass
+    #firefox
+    #steam
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -39,15 +51,15 @@
     # '')
   ];
 
-	programs.git = {
-		enable = true;
-		userName = "Jan Jaworski";
-		userEmail = "jaworek3211@gmail.com";
-		extraConfig = {
-			core.editor = "/etc/profiles/per-user/john/bin/nvim";
-			push.autoSetupRemote = true;
-		};
-	};
+  programs.git = {
+    enable = true;
+    userName = "Jan Jaworski";
+    userEmail = "jaworek3211@gmail.com";
+    extraConfig = {
+      core.editor = "/etc/profiles/per-user/john/bin/nvim";
+      push.autoSetupRemote = true;
+    };
+  };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

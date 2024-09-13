@@ -16,6 +16,18 @@
 		];
 	};
 
+	#homebrew.enable = true;
+	#homebrew.casks = [
+        #	"enpass"
+	#];
+
+	fonts = {
+		packages = with pkgs; [
+			(nerdfonts.override { fonts = ["JetBrainsMono"]; })
+			#(google-fonts.override { fonts = ["PublicSans"]; })
+		];
+	};
+
 	nixpkgs.config.allowUnfree = true;
 
 	security.pam.enableSudoTouchIdAuth = true;
@@ -27,7 +39,13 @@
 		home = "/Users/john";
 	};
 
-	programs.zsh.enable = true;
+	programs.zsh = { 
+	  enable = true;
+	  #shellAliases = {
+	  #  vim = "nvim";
+	  #  gs = "git status";
+	  #};
+	};
 
 	system.stateVersion = 4;
 }
