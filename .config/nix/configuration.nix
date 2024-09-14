@@ -16,10 +16,20 @@
 		];
 	};
 
-	#homebrew.enable = true;
-	#homebrew.casks = [
-        #	"enpass"
-	#];
+	homebrew.enable = true;
+	homebrew.casks = [
+		# missing ARM version
+        	#"enpass"
+		"signal"
+		"steam"
+		"arc"
+		"firefox"
+		"vlc"
+	];
+
+	homebrew.masApps = {
+		Numbers = 409203825;
+	};
 
 	fonts = {
 		packages = with pkgs; [

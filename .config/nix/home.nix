@@ -32,10 +32,13 @@
     bun
     ansible
     darwin.xcode_15_1
+    keka
     #signal-desktop
     #enpass
     #firefox
     #steam
+    #vlc
+    #the-unarchiver or unar (the one available in nix seems to be cli only)
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
