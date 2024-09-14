@@ -19,16 +19,18 @@
 			g = "git";
 			gs = "git status";
 			gc = "git commit";
+			gaa = "git add --all";
 			vim = "nvim";
 		};
 
 		systemPath = [
-			"/opt/homebrew/bin/brew"
+			"/opt/homebrew/bin"
 		];
 	};
 
 	homebrew.enable = true;
 	homebrew.onActivation.cleanup = "zap";
+	
 	homebrew.casks = [
 		# missing ARM version
         	#"enpass"
@@ -40,6 +42,7 @@
 
 	homebrew.masApps = {
 		Numbers = 409203825;
+		Enpass = 732710998;
 	};
 
 	fonts = {
@@ -52,7 +55,7 @@
 	system.defaults = {
 		NSGlobalDomain = {
 			# Sets Trackpad -> Point & Click -> Tracking speed
-			"com.apple.trackpad.scaling" = 0.875;
+			"com.apple.trackpad.scaling" = 2.0;
 
 			# Enables Trackpad -> Point & Click -> Force Click and haptic feedback
 			"com.apple.trackpad.forceClick" = true;
