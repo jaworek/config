@@ -33,6 +33,7 @@
     ansible
     darwin.xcode_15_1
     keka
+    iina
     #signal-desktop
     #enpass
     #firefox
