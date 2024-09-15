@@ -21,6 +21,8 @@
 			gc = "git commit";
 			gaa = "git add --all";
 			vim = "nvim";
+			la = "ls -laG";
+			darwin-rebuild-switch = "~/.config/nix/rebuild-and-switch.sh";
 		};
 
 		systemPath = [

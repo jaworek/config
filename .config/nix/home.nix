@@ -34,6 +34,7 @@
     darwin.xcode_15_1
     keka
     iina
+    #sweethome3d.application
     #signal-desktop
     #enpass
     #firefox
