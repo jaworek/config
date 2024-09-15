@@ -40,6 +40,7 @@
 		"steam"
 		"arc"
 		"firefox"
+		"synology-drive"
 	];
 
 	homebrew.masApps = {
@@ -81,9 +82,9 @@
 			show-recents = false;
 
 			persistent-apps = [
-				#Arc
+				"/Applications/Arc.app"
 				"/System/Cryptexes/App/System/Applications/Safari.app"
-				#Firefox
+				"/Applications/Firefox.app"
 				"/System/Applications/Messages.app"
 				"/System/Applications/Calendar.app"
 				"/System/Applications/Notes.app"
@@ -93,9 +94,10 @@
 				"${pkgs.vscode}/Applications/Visual Studio Code.app"
 				"${pkgs.darwin.xcode_15_1}"
 				"${pkgs.darwin.xcode_15_1}/Contents/Developer/Applications/Simulator.app"
-				#Discord
 				"${pkgs.telegram-desktop}/Applications/Telegram.app"
-				#Signal
+				"/Applications/Signal.app"
+				"${pkgs.discord}/Applications/Discord.app"
+				"/Applications/Enpass.app"
 			];
 		};
 

@@ -2,6 +2,9 @@
 
 set -e
 
+#Install Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 # Install Nix
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 
@@ -19,8 +22,3 @@ sudo chflags hidden /nix
 #Enable Rosetta
 softwareupdate --install-rosetta --agree-to-license
 
-#Bit of a chicken and an egg problem
-#Nix-Darwin installs packages using brew, but Xcode command line tools are needed first
-#The best would be to wait with installing them after XCode is ready
-#Install Homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"

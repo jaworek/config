@@ -25,7 +25,8 @@
     git
     karabiner-elements
     discord
-    synology-drive-client
+    #does not start for some reason
+    #synology-drive-client
     tmux
     yt-dlp
     go
