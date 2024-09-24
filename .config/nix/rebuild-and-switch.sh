@@ -1,3 +1,3 @@
 #!/bin/bash
 
-darwin-rebuild switch --flake ~/.nix
+darwin-rebuild switch --flake ~/.config/nix

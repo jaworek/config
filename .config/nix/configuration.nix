@@ -32,6 +32,13 @@
 
 	homebrew.enable = true;
 	homebrew.onActivation.cleanup = "zap";
+
+	homebrew.brews = [
+		{
+			name = "asimov";
+			start_service = true;
+		}
+	];
 	
 	homebrew.casks = [
 		# missing ARM version
@@ -41,6 +48,7 @@
 		"arc"
 		"firefox"
 		"synology-drive"
+		"brave-browser"
 	];
 
 	homebrew.masApps = {
