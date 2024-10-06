@@ -35,6 +35,7 @@
     darwin.xcode_15_1
     keka
     iina
+    nodejs_20
     #sweethome3d.application
     #signal-desktop
     #enpass
