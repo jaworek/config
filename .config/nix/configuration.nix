@@ -39,6 +39,11 @@
 			start_service = true;
 		}
 	];
+
+
+	homebrew.caskArgs = {
+		no_quarantine = true;
+	};
 	
 	homebrew.casks = [
 		# missing ARM version
@@ -49,9 +54,13 @@
 		"firefox"
 		"synology-drive"
 		"brave-browser"
+		{
+			name = "grishka/grishka/neardrop";
+		}
 	];
 
 	homebrew.masApps = {
+		iMovie = 408981434;
 		Numbers = 409203825;
 		Enpass = 732710998;
 	};

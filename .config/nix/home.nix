@@ -36,6 +36,7 @@
     keka
     iina
     nodejs_20
+    ffmpeg-full
     #sweethome3d.application
     #signal-desktop
     #enpass

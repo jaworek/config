@@ -35,8 +35,14 @@
     ];
 
     configuration = systemArg: darwin.lib.darwinSystem rec {
-      system = systemArg;
-      modules = darwinModules;
+    	system = systemArg;
+    	modules = darwinModules ++ [{
+    		nixpkgs.overlays = [
+    			(self: super: {
+    				neovim = (import nixpkgs-unstable { system = systemArg; }).neovim;
+    			})
+    		];
+    	}];
     };
   in
   {
