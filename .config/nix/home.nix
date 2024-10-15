@@ -37,6 +37,7 @@
     iina
     nodejs_20
     ffmpeg-full
+    obsidian
     #sweethome3d.application
     #signal-desktop
     #enpass
