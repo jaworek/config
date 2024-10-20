@@ -68,7 +68,6 @@
 	fonts = {
 		packages = with pkgs; [
 			(nerdfonts.override { fonts = ["JetBrainsMono"]; })
-			#(google-fonts.override { fonts = ["PublicSans"]; })
 		];
 	};
 
@@ -92,6 +91,8 @@
 
 			# Sets Appearance -> Show scroll bars to "Always"
 			AppleShowScrollBars = "Always";
+
+			KeyRepeat = 2;
 		};
 
 		dock = {
@@ -115,6 +116,7 @@
 				"/Applications/Signal.app"
 				"${pkgs.discord}/Applications/Discord.app"
 				"/Applications/Enpass.app"
+				"${pkgs.obsidian}/Applications/Obsidian.app"
 			];
 		};
 
@@ -142,7 +144,9 @@
 				AutoUpdate = false;
 			};
 		};
-		};
+
+		loginwindow.GuestEnabled = false;
+	};
 
 
 	nixpkgs.config.allowUnfree = true;
