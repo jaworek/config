@@ -20,6 +20,7 @@
 			gs = "git status";
 			gc = "git commit";
 			gaa = "git add --all";
+			gpu = "git push";
 			vim = "nvim";
 			la = "ls -laG";
 			darwin-rebuild-switch = "~/.config/nix/rebuild-and-switch.sh";
