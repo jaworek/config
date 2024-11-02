@@ -101,6 +101,9 @@
 			# Disables Desktop & Dock -> Dock -> Show suggested and recent apps in Dock
 			show-recents = false;
 
+			# Don’t rearrange spaces based on the most recent use
+			mru-spaces = false;
+
 			persistent-apps = [
 				"/Applications/Arc.app"
 				"/System/Cryptexes/App/System/Applications/Safari.app"
