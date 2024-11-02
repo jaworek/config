@@ -94,6 +94,13 @@
 			# Sets Appearance -> Show scroll bars to "Always"
 			AppleShowScrollBars = "Always";
 
+			# Disable font smoothing
+			# https://tonsky.me/blog/monitors/
+			AppleFontSmoothing = 0;
+
+			# Automatic dark and light mode
+			AppleInterfaceStyleSwitchesAutomatically = true;
+
 			KeyRepeat = 2;
 		};
 
