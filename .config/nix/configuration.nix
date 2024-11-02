@@ -55,6 +55,7 @@
 		"firefox"
 		"synology-drive"
 		"brave-browser"
+		"cursor"
 		{
 			name = "grishka/grishka/neardrop";
 		}
