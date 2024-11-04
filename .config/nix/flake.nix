@@ -34,6 +34,9 @@
     in
     darwin.lib.darwinSystem rec {
 	inherit system;
+	specialArgs = {
+		inherit type;
+	};
     	modules = darwinModules ++ [{
     		nixpkgs.overlays = [
     			(self: super: {
