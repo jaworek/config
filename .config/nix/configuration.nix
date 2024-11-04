@@ -1,6 +1,7 @@
 {
 	pkgs,
 	lib,
+	type ? "personal",
 	...
 }:
 {
@@ -170,6 +171,15 @@
 	users.users.john = {
 		name = "john";
 		home = "/Users/john";
+	};
+
+	home-manager = {
+		useGlobalPkgs = true;
+		useUserPackages = true;
+		users.john = import ./home.nix;
+		extraSpecialArgs = {
+			inherit type;
+		};
 	};
 
 	programs.zsh = { 

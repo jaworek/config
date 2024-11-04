@@ -23,10 +23,6 @@
 
       	home-manager.darwinModules.home-manager
 	{
-		home-manager.useGlobalPkgs = true;
-		home-manager.useUserPackages = true;
-		home-manager.users.john = import ./home.nix;
-
 		nix.registry = {
 			nixpkgs.flake = nixpkgs;
                         nixpkgs-unstable.flake = nixpkgs-unstable;
@@ -34,12 +30,14 @@
 	}
     ];
 
-    configuration = systemArg: darwin.lib.darwinSystem rec {
-    	system = systemArg;
+    configuration = { system, type ? "personal" }: let 
+    in
+    darwin.lib.darwinSystem rec {
+	inherit system;
     	modules = darwinModules ++ [{
     		nixpkgs.overlays = [
     			(self: super: {
-    				neovim = (import nixpkgs-unstable { system = systemArg; }).neovim;
+    				neovim = (import nixpkgs-unstable { inherit system; }).neovim;
     			})
     		];
     	}];
@@ -47,7 +45,10 @@
   in
   {
     # Build darwin flake using:
-    darwinConfigurations."Johns-MacBook-Pro" = configuration "aarch64-darwin";
+    darwinConfigurations = {
+			"Johns-MacBook-Pro" = configuration { system = "aarch64-darwin"; };
+			work = configuration { system = "aarch64-darwin"; type = "work"; };
+    };
     # Expose the package set, including overlays, for convenience.
     # darwinPackages = self.darwinConfigurations."Johns-MacBook-Pro".pkgs;
   };

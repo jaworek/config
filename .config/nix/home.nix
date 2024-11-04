@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, type ? "personal", ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -63,7 +63,11 @@
   programs.git = {
     enable = true;
     userName = "Jan Jaworski";
-    userEmail = "jaworek3211@gmail.com";
+    userEmail = if type == "work" 
+                  then 
+                    "jmm.jaworski@gmail.com"
+                  else
+                    "jaworek3211@gmail.com";
     extraConfig = {
       core.editor = "/etc/profiles/per-user/john/bin/nvim";
       push.autoSetupRemote = true;
