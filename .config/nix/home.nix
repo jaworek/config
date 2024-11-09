@@ -38,6 +38,11 @@
     nodejs_20
     ffmpeg-full
     obsidian
+    scrcpy
+    # fd and ripgrep are needed for telescope plugin in nvim
+    fd
+    ripgrep
+    nixd
     #sweethome3d.application
     #signal-desktop
     #enpass
@@ -71,6 +76,8 @@
     extraConfig = {
       core.editor = "/etc/profiles/per-user/john/bin/nvim";
       push.autoSetupRemote = true;
+      init.defaultBranch = "master";
+      pull.rebase = true;
     };
   };
 

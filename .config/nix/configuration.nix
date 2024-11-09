@@ -14,6 +14,7 @@
 			git
 			iterm2
 			tailscale
+			nixd
 		];
 
 		shellAliases = {
@@ -25,6 +26,7 @@
 			vim = "nvim";
 			la = "ls -laG";
 			darwin-rebuild-switch = "~/.config/nix/rebuild-and-switch.sh";
+			darwin-rebuild-switch-work = "~/.config/nix/rebuild-and-switch.sh --configuration work";
 		};
 
 		systemPath = [

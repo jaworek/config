@@ -49,7 +49,7 @@
   {
     # Build darwin flake using:
     darwinConfigurations = {
-			"Johns-MacBook-Pro" = configuration { system = "aarch64-darwin"; };
+			john = configuration { system = "aarch64-darwin"; };
 			work = configuration { system = "aarch64-darwin"; type = "work"; };
     };
     # Expose the package set, including overlays, for convenience.
