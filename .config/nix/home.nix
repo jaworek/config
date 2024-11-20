@@ -43,6 +43,7 @@
     fd
     ripgrep
     nixd
+    #monero-gui
     #sweethome3d.application
     #signal-desktop
     #enpass
@@ -81,6 +82,16 @@
     };
   };
 
+	programs.zsh = { 
+	  enable = true;
+	  autosuggestion = {
+	    enable = true;
+	  };
+	  enableCompletion = true;
+	  syntaxHighlighting.enable = true;
+	};
+
+
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
@@ -107,7 +118,9 @@
   #
   # if you don't want to manage your shell through Home Manager.
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
+    # need to manually define it for tmux to find config correctly
+    XDG_CONFIG_HOME = "$HOME/.config";
   };
 
   # Let Home Manager install and manage itself.

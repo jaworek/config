@@ -27,6 +27,7 @@
 			la = "ls -laG";
 			darwin-rebuild-switch = "~/.config/nix/rebuild-and-switch.sh";
 			darwin-rebuild-switch-work = "~/.config/nix/rebuild-and-switch.sh --configuration work";
+			mkdir = "mkdir -p";
 		};
 
 		systemPath = [
@@ -36,6 +37,10 @@
 
 	homebrew.enable = true;
 	homebrew.onActivation.cleanup = "zap";
+
+	homebrew.taps = [
+		"homebrew/services"
+	];
 
 	homebrew.brews = [
 		{
@@ -85,6 +90,8 @@
 			"com.apple.trackpad.forceClick" = true;
 			# Enables Trackpad -> Scroll & Zoom -> Natural scrolling and Mouse -> Nautral scrolling
 			"com.apple.swipescrolldirection" = true;
+			# Tap to click
+			"com.apple.mouse.tapBehavior" = 1;
 			# Sets Language & Region -> Measurement system to "Metric"
 			AppleMeasurementUnits = "Centimeters";
 			# Sets Language & Region -> Measurement system to "Metric"
@@ -133,6 +140,13 @@
 				"/Applications/Enpass.app"
 				"${pkgs.obsidian}/Applications/Obsidian.app"
 			];
+
+
+			# Disable hot corners
+			wvous-bl-corner = 1;
+			wvous-br-corner = 1;
+			wvous-tl-corner = 1;
+			wvous-tr-corner = 1;
 		};
 
 		CustomUserPreferences = {
