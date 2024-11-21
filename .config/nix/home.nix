@@ -105,6 +105,8 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+    ".config/karabiner".source = ./karabiner;
+    ".config/tmux".source = ./tmux;
   };
 
   # You can also manage environment variables but you will have to manually

@@ -108,8 +108,10 @@
 			# https://tonsky.me/blog/monitors/
 			AppleFontSmoothing = 0;
 
+			AppleInterfaceStyle = "Dark";
+
 			# Automatic dark and light mode
-			AppleInterfaceStyleSwitchesAutomatically = true;
+			# AppleInterfaceStyleSwitchesAutomatically = true;
 
 			KeyRepeat = 2;
 		};
@@ -196,10 +198,6 @@
 		extraSpecialArgs = {
 			inherit type;
 		};
-	};
-
-	programs.zsh = { 
-	  enable = true;
 	};
 
 	system.stateVersion = 4;
