@@ -40,6 +40,7 @@
 
 	homebrew.taps = [
 		"homebrew/services"
+		"FelixKratz/formulae"
 	];
 
 	homebrew.brews = [
@@ -47,6 +48,8 @@
 			name = "asimov";
 			start_service = true;
 		}
+		"borders"
+		"sketchybar"
 	];
 
 
@@ -67,6 +70,8 @@
 		{
 			name = "grishka/grishka/neardrop";
 		}
+		"nikitabobko/tap/aerospace"
+		"blender"
 	];
 
 	homebrew.masApps = {
@@ -114,6 +119,9 @@
 			# AppleInterfaceStyleSwitchesAutomatically = true;
 
 			KeyRepeat = 2;
+
+			# Move windows by holding ctrl+cmd and dragging any part of the window
+			NSWindowShouldDragOnGesture = true;
 		};
 
 		dock = {
@@ -185,6 +193,7 @@
 	security.pam.enableSudoTouchIdAuth = true;
 
 	services.nix-daemon.enable = true;
+	services.karabiner-elements.enable = true;
 
 	users.users.john = {
 		name = "john";
