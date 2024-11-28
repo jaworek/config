@@ -27,6 +27,7 @@
 			la = "ls -laG";
 			darwin-rebuild-switch = "~/.config/nix/rebuild-and-switch.sh";
 			darwin-rebuild-switch-work = "~/.config/nix/rebuild-and-switch.sh --configuration work";
+			darwin-cleanup = "nix-collect-garbage --delete-older-than 7d";
 			mkdir = "mkdir -p";
 		};
 
