@@ -15,7 +15,25 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgs; [
+  home.packages = with pkgs; if type == "work" 
+  then
+  [
+    iterm2
+    raycast
+    vscode
+    neovim
+    git
+    karabiner-elements
+    tmux
+    bun
+    nodejs_20
+    scrcpy
+    # fd and ripgrep are needed for telescope plugin in nvim
+    fd
+    ripgrep
+  ]
+  else
+  [
     iterm2
     telegram-desktop
     raycast
@@ -45,6 +63,8 @@
     fd
     ripgrep
     nixd
+    transmission
+    scrcpy
     #monero-gui
     #sweethome3d.application
     #signal-desktop

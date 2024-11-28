@@ -58,7 +58,15 @@
 		no_quarantine = true;
 	};
 	
-	homebrew.casks = [
+	homebrew.casks = if type == "work" 
+		then
+		[
+		"arc"
+		"firefox"
+		"brave-browser"
+		]
+		else
+		[
 		# missing ARM version
         	#"enpass"
 		"signal"
@@ -73,13 +81,17 @@
 		}
 		"nikitabobko/tap/aerospace"
 		"blender"
-	];
+		];
 
-	homebrew.masApps = {
-		iMovie = 408981434;
-		Numbers = 409203825;
-		Enpass = 732710998;
-	};
+	homebrew.masApps = if type == "work" 
+		then
+		{}
+		else
+		{
+			iMovie = 408981434;
+			Numbers = 409203825;
+			Enpass = 732710998;
+		};
 
 	fonts = {
 		packages = with pkgs; [
@@ -132,7 +144,20 @@
 			# Don’t rearrange spaces based on the most recent use
 			mru-spaces = false;
 
-			persistent-apps = [
+			persistent-apps = if type == "work"
+				then
+				[
+				"/Applications/Arc.app"
+				"/System/Cryptexes/App/System/Applications/Safari.app"
+				"/Applications/Firefox.app"
+				"/System/Applications/Calendar.app"
+				"/System/Applications/Notes.app"
+				"/System/Applications/System Settings.app"
+				"${pkgs.iterm2}/Applications/iTerm2.app"
+				"${pkgs.vscode}/Applications/Visual Studio Code.app"
+				]
+				else
+				[
 				"/Applications/Arc.app"
 				"/System/Cryptexes/App/System/Applications/Safari.app"
 				"/Applications/Firefox.app"
