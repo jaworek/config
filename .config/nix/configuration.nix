@@ -10,7 +10,14 @@
 	environment = {
 		# List packages installed in system profile. To search by name, run:
 		# $ nix-env -qaP | grep wget
-		systemPackages = with pkgs; [
+		systemPackages = with pkgs; if type == "work"
+		then 
+		[
+			git
+			iterm2
+		]
+		else
+		[
 			git
 			iterm2
 			tailscale
@@ -39,12 +46,22 @@
 	homebrew.enable = true;
 	homebrew.onActivation.cleanup = "zap";
 
-	homebrew.taps = [
+	homebrew.taps = if type == "work"
+	then
+	[
+		"homebrew/services"
+	]
+	else
+	[
 		"homebrew/services"
 		"FelixKratz/formulae"
 	];
 
-	homebrew.brews = [
+	homebrew.brews = if type == "work" 
+	then
+	[]
+	else
+	[
 		{
 			name = "asimov";
 			start_service = true;
