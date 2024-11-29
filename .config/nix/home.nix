@@ -1,4 +1,10 @@
-{ config, pkgs, lib, type ? "personal", ... }:
+{
+  config,
+  pkgs,
+  lib,
+  type ? "personal",
+  ...
+}:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -15,95 +21,92 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgs; if type == "work" 
-  then
-  [
-    iterm2
-    raycast
-    vscode
-    neovim
-    git
-    karabiner-elements
-    tmux
-    bun
-    nodejs_20
-    scrcpy
-    # fd and ripgrep are needed for telescope plugin in nvim
-    fd
-    ripgrep
-    watchman
-    zulu17
-    cocoapods
-    rustup
-  ]
-  else
-  [
-    iterm2
-    telegram-desktop
-    raycast
-    spotify
-    vscode
-    neovim
-    git
-    karabiner-elements
-    discord
-    #does not start for some reason
-    #synology-drive-client
-    tmux
-    yt-dlp
-    go
-    bun
-    ansible
-    # darwin.xcode_15_1
-    # darwin.xcode_16_1
-    # blender
-    keka
-    iina
-    nodejs_20
-    ffmpeg-full
-    obsidian
-    scrcpy
-    # fd and ripgrep are needed for telescope plugin in nvim
-    fd
-    ripgrep
-    nixd
-    transmission
-    scrcpy
-    watchman
-    zulu17
-    cocoapods
-    rustup
-    #monero-gui
-    #sweethome3d.application
-    #signal-desktop
-    #enpass
-    #firefox
-    #steam
-    #vlc
-    #the-unarchiver or unar (the one available in nix seems to be cli only)
+  home.packages =
+    with pkgs;
+    if type == "work" then
+      [
+        iterm2
+        raycast
+        vscode
+        neovim
+        git
+        karabiner-elements
+        tmux
+        bun
+        nodejs_20
+        scrcpy
+        # fd and ripgrep are needed for telescope plugin in nvim
+        fd
+        ripgrep
+        watchman
+        zulu17
+        cocoapods
+        rustup
+      ]
+    else
+      [
+        iterm2
+        telegram-desktop
+        raycast
+        spotify
+        vscode
+        neovim
+        git
+        karabiner-elements
+        discord
+        #does not start for some reason
+        #synology-drive-client
+        tmux
+        yt-dlp
+        go
+        bun
+        ansible
+        # darwin.xcode_15_1
+        # darwin.xcode_16_1
+        # blender
+        keka
+        iina
+        nodejs_20
+        ffmpeg-full
+        obsidian
+        scrcpy
+        # fd and ripgrep are needed for telescope plugin in nvim
+        fd
+        ripgrep
+        nixd
+        transmission
+        scrcpy
+        watchman
+        zulu17
+        cocoapods
+        rustup
+        #monero-gui
+        #sweethome3d.application
+        #signal-desktop
+        #enpass
+        #firefox
+        #steam
+        #vlc
+        #the-unarchiver or unar (the one available in nix seems to be cli only)
 
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+        # # It is sometimes useful to fine-tune packages, for example, by applying
+        # # overrides. You can do that directly here, just don't forget the
+        # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
+        # # fonts?
+        # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
-  ];
+        # # You can also create simple shell scripts directly inside your
+        # # configuration. For example, this adds a command 'my-hello' to your
+        # # environment:
+        # (pkgs.writeShellScriptBin "my-hello" ''
+        #   echo "Hello, ${config.home.username}!"
+        # '')
+      ];
 
   programs.git = {
     enable = true;
     userName = "Jan Jaworski";
-    userEmail = if type == "work" 
-                  then 
-                    "jmm.jaworski@gmail.com"
-                  else
-                    "jaworek3211@gmail.com";
+    userEmail = if type == "work" then "jmm.jaworski@gmail.com" else "jaworek3211@gmail.com";
     extraConfig = {
       core.editor = "/etc/profiles/per-user/john/bin/nvim";
       push.autoSetupRemote = true;
@@ -112,15 +115,14 @@
     };
   };
 
-	programs.zsh = { 
-	  enable = true;
-	  autosuggestion = {
-	    enable = true;
-	  };
-	  enableCompletion = true;
-	  syntaxHighlighting.enable = true;
-	};
-
+  programs.zsh = {
+    enable = true;
+    autosuggestion = {
+      enable = true;
+    };
+    enableCompletion = true;
+    syntaxHighlighting.enable = true;
+  };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -153,10 +155,9 @@
     EDITOR = "nvim";
     # need to manually define it for tmux to find config correctly
     XDG_CONFIG_HOME = "$HOME/.config";
-    JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home";
+    JAVA_HOME = "/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home";
   };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
-
