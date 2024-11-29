@@ -21,7 +21,8 @@
 			git
 			iterm2
 			tailscale
-			nixd
+			transmission
+			nixfmt-rfc-style
 		];
 
 		shellAliases = {
@@ -40,6 +41,9 @@
 
 		systemPath = [
 			"/opt/homebrew/bin"
+			"$HOME/Library/Android/sdk"
+			"$PATH:$ANDROID_HOME/emulator"
+    			"$PATH:$ANDROID_HOME/platform-tools"
 		];
 	};
 

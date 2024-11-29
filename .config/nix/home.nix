@@ -31,6 +31,10 @@
     # fd and ripgrep are needed for telescope plugin in nvim
     fd
     ripgrep
+    watchman
+    zulu17
+    cocoapods
+    rustup
   ]
   else
   [
@@ -65,6 +69,10 @@
     nixd
     transmission
     scrcpy
+    watchman
+    zulu17
+    cocoapods
+    rustup
     #monero-gui
     #sweethome3d.application
     #signal-desktop
@@ -145,6 +153,7 @@
     EDITOR = "nvim";
     # need to manually define it for tmux to find config correctly
     XDG_CONFIG_HOME = "$HOME/.config";
+    JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home";
   };
 
   # Let Home Manager install and manage itself.
