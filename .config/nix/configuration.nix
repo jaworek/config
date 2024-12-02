@@ -46,6 +46,12 @@
       "$PATH:$ANDROID_HOME/emulator"
       "$PATH:$ANDROID_HOME/platform-tools"
     ];
+
+    etc = {
+      "pam.d/sudo_local".text = ''
+        auth sufficient pam_tid.so
+      '';
+    };
   };
 
   homebrew.enable = true;
@@ -240,7 +246,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  security.pam.enableSudoTouchIdAuth = true;
+  # security.pam.enableSudoTouchIdAuth = true;
 
   services.nix-daemon.enable = true;
   services.karabiner-elements.enable = true;
