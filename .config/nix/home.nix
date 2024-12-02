@@ -34,6 +34,7 @@
         tmux
         bun
         nodejs_20
+        darwin.xcode_16_1
         scrcpy
         # fd and ripgrep are needed for telescope plugin in nvim
         fd
@@ -62,7 +63,7 @@
         bun
         ansible
         # darwin.xcode_15_1
-        # darwin.xcode_16_1
+        darwin.xcode_16_1
         # blender
         keka
         iina
@@ -73,7 +74,6 @@
         # fd and ripgrep are needed for telescope plugin in nvim
         fd
         ripgrep
-        nixd
         transmission
         scrcpy
         watchman

@@ -2,11 +2,11 @@
   description = "MacOS system configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/release-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/release-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     darwin.url = "github:LnL7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
-    home-manager.url = "github:nix-community/home-manager/release-24.05";
+    home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
@@ -49,7 +49,7 @@
             {
               nixpkgs.overlays = [
                 (self: super: {
-                  neovim = (import nixpkgs-unstable { inherit system; }).neovim;
+                  # neovim = (import nixpkgs-unstable { inherit system; }).neovim;
                   # darwin.xcode_16_1 = (import nixpkgs-unstable { inherit system; }).darwin.xcode_16_1;
                 })
               ];
