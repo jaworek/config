@@ -199,6 +199,17 @@
       wvous-tr-corner = 1;
     };
 
+    screensaver = {
+      askForPasswordDelay = 0;
+      askForPassword = true;
+    };
+
+    controlcenter = {
+      BatteryShowPercentage = true;
+      Bluetooth = true;
+      Sound = true;
+    };
+
     CustomUserPreferences = {
       NSGlobalDomain = {
         # Sets Language & Region -> First day of week to "Monday"

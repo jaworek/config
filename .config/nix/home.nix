@@ -74,7 +74,7 @@
         # fd and ripgrep are needed for telescope plugin in nvim
         fd
         ripgrep
-        transmission
+        transmission_4
         scrcpy
         watchman
         zulu17
