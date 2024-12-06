@@ -89,6 +89,7 @@
         "arc"
         "firefox"
         "brave-browser"
+        "minisim"
       ]
     else
       [
