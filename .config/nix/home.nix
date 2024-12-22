@@ -112,6 +112,7 @@
       push.autoSetupRemote = true;
       init.defaultBranch = "master";
       pull.rebase = true;
+      merge.conflictstyle = "zdiff3";
     };
   };
 
