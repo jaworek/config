@@ -43,6 +43,7 @@
         zulu17
         cocoapods
         rustup
+        delta
       ]
     else
       [
@@ -80,6 +81,7 @@
         zulu17
         cocoapods
         rustup
+        delta
         #monero-gui
         #sweethome3d.application
         #signal-desktop
@@ -113,6 +115,11 @@
       init.defaultBranch = "master";
       pull.rebase = true;
       merge.conflictstyle = "zdiff3";
+      core.pager = "delta";
+      interactive.diffFilter = "delta --color-only";
+      delta = {
+        navigate = true;
+      };
     };
   };
 
