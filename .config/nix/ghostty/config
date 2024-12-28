@@ -1,0 +1,6 @@
+font-feature = "-calt"
+font-feature = "-liga"
+font-feature = "-dlig"
+window-inherit-working-directory = false
+window-save-state = "always"
+window-colorspace = "display-p3"

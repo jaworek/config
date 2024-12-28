@@ -147,6 +147,7 @@
     # '';
     ".config/karabiner".source = ./karabiner;
     ".config/tmux".source = ./tmux;
+    ".config/ghostty".source = ./ghostty;
   };
 
   # You can also manage environment variables but you will have to manually
