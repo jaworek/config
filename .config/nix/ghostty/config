@@ -4,3 +4,6 @@ font-feature = "-dlig"
 window-inherit-working-directory = false
 window-save-state = "always"
 window-colorspace = "display-p3"
+quit-after-last-window-closed = true
+copy-on-select = true
+theme = "JetBrains Darcula"
