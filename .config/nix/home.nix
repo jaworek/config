@@ -146,7 +146,7 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
     ".config/karabiner".source = ./karabiner;
-    ".config/tmux".source = ./tmux;
+    # ".config/tmux".source = ./tmux;
     ".config/ghostty".source = ./ghostty;
   };
 
