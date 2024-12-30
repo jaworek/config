@@ -33,7 +33,6 @@
         karabiner-elements
         tmux
         bun
-        nodejs_20
         darwin.xcode_16_1
         scrcpy
         # fd and ripgrep are needed for telescope plugin in nvim
@@ -44,6 +43,7 @@
         cocoapods
         rustup
         delta
+        jetbrains.webstorm
       ]
     else
       [
@@ -107,7 +107,7 @@
   programs.git = {
     enable = true;
     userName = "Jan Jaworski";
-    userEmail = if type == "work" then "jmm.jaworski@gmail.com" else "jaworek3211@gmail.com";
+    userEmail = if type == "work" then "jan.jaworski@callstack.com" else "jaworek3211@gmail.com";
     extraConfig = {
       core.editor = "/etc/profiles/per-user/john/bin/nvim";
       push.autoSetupRemote = true;

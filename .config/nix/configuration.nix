@@ -68,7 +68,12 @@
 
   homebrew.brews =
     if type == "work" then
-      [ ]
+      [ 
+        {
+          name = "node@20";
+          link = true;
+        }
+      ]
     else
       [
         {
@@ -125,7 +130,7 @@
   system.defaults = {
     NSGlobalDomain = {
       # Sets Trackpad -> Point & Click -> Tracking speed
-      "com.apple.trackpad.scaling" = 2.0;
+      "com.apple.trackpad.scaling" = 3.0;
 
       # Enables Trackpad -> Point & Click -> Force Click and haptic feedback
       "com.apple.trackpad.forceClick" = true;
@@ -178,6 +183,9 @@
             "/System/Applications/System Settings.app"
             "${pkgs.iterm2}/Applications/iTerm2.app"
             "${pkgs.vscode}/Applications/Visual Studio Code.app"
+            "${pkgs.darwin.xcode_16_1}"
+            "/Applications/Slack.app"
+            "/Applications/1Password.app"
           ]
         else
           [
@@ -251,7 +259,7 @@
   # security.pam.enableSudoTouchIdAuth = true;
 
   services.nix-daemon.enable = true;
-  services.karabiner-elements.enable = true;
+  # services.karabiner-elements.enable = true;
 
   users.users.john = {
     name = "john";
