@@ -84,7 +84,7 @@
         delta
         #monero-gui
         #sweethome3d.application
-        #signal-desktop
+        signal-desktop
         #enpass
         #firefox
         #steam

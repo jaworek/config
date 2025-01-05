@@ -95,7 +95,6 @@
       [
         # missing ARM version
         #"enpass"
-        "signal"
         "steam"
         "arc"
         "firefox"
@@ -193,7 +192,7 @@
             "${pkgs.darwin.xcode_16_1}"
             "${pkgs.darwin.xcode_16_1}/Contents/Developer/Applications/Simulator.app"
             "${pkgs.telegram-desktop}/Applications/Telegram.app"
-            "/Applications/Signal.app"
+            "${pkgs.signal-desktop}/Applications/Signal.app"
             "${pkgs.discord}/Applications/Discord.app"
             "/Applications/Enpass.app"
             "${pkgs.obsidian}/Applications/Obsidian.app"
