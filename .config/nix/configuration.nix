@@ -115,6 +115,7 @@
         iMovie = 408981434;
         Numbers = 409203825;
         Enpass = 732710998;
+        Wireguard = 1451685025;
       };
 
   fonts = {
