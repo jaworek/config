@@ -63,7 +63,6 @@
         go
         bun
         ansible
-        # darwin.xcode_15_1
         darwin.xcode_16_1
         # blender
         keka
