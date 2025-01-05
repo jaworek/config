@@ -104,6 +104,7 @@
         { name = "grishka/grishka/neardrop"; }
         "nikitabobko/tap/aerospace"
         "blender"
+        "bambu-studio"
       ];
 
   homebrew.masApps =
