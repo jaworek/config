@@ -44,6 +44,7 @@
         rustup
         delta
         jetbrains.webstorm
+        gh
       ]
     else
       [
@@ -84,6 +85,7 @@
         #monero-gui
         #sweethome3d.application
         signal-desktop
+        gh
         #enpass
         #firefox
         #steam
