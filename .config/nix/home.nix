@@ -27,7 +27,6 @@
       [
         iterm2
         raycast
-        vscode
         neovim
         git
         karabiner-elements
@@ -52,7 +51,6 @@
         telegram-desktop
         raycast
         spotify
-        vscode
         neovim
         git
         karabiner-elements
@@ -86,6 +84,8 @@
         #sweethome3d.application
         signal-desktop
         gh
+        # kicad
+        # freecad
         #enpass
         #firefox
         #steam

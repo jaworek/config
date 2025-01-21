@@ -68,7 +68,7 @@
 
   homebrew.brews =
     if type == "work" then
-      [ 
+      [
         {
           name = "node@20";
           link = true;
@@ -182,7 +182,7 @@
             "/System/Applications/Notes.app"
             "/System/Applications/System Settings.app"
             "${pkgs.iterm2}/Applications/iTerm2.app"
-            "${pkgs.vscode}/Applications/Visual Studio Code.app"
+            # "${pkgs.vscode}/Applications/Visual Studio Code.app"
             "${pkgs.darwin.xcode_16_1}"
             "/Applications/Slack.app"
             "/Applications/1Password.app"
@@ -198,7 +198,7 @@
             "/System/Applications/System Settings.app"
             "${pkgs.spotify}/Applications/Spotify.app"
             "${pkgs.iterm2}/Applications/iTerm2.app"
-            "${pkgs.vscode}/Applications/Visual Studio Code.app"
+            # "${pkgs.vscode}/Applications/Visual Studio Code.app"
             "${pkgs.darwin.xcode_16_1}"
             "${pkgs.darwin.xcode_16_1}/Contents/Developer/Applications/Simulator.app"
             "${pkgs.telegram-desktop}/Applications/Telegram.app"
