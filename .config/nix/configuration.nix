@@ -15,12 +15,10 @@
       if type == "work" then
         [
           git
-          iterm2
         ]
       else
         [
           git
-          iterm2
           tailscale
           nixfmt-rfc-style
         ];
@@ -180,7 +178,7 @@
             "/System/Applications/Calendar.app"
             "/System/Applications/Notes.app"
             "/System/Applications/System Settings.app"
-            "${pkgs.iterm2}/Applications/iTerm2.app"
+            "/Applications/Ghostty.app"
             # "${pkgs.vscode}/Applications/Visual Studio Code.app"
             "${pkgs.darwin.xcode_16_1}"
             "/Applications/Slack.app"
@@ -196,7 +194,7 @@
             "/System/Applications/Notes.app"
             "/System/Applications/System Settings.app"
             "${pkgs.spotify}/Applications/Spotify.app"
-            "${pkgs.iterm2}/Applications/iTerm2.app"
+            "/Applications/Ghostty.app"
             # "${pkgs.vscode}/Applications/Visual Studio Code.app"
             "${pkgs.darwin.xcode_16_1}"
             "${pkgs.darwin.xcode_16_1}/Contents/Developer/Applications/Simulator.app"

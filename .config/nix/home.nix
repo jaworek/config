@@ -25,7 +25,6 @@
     with pkgs;
     if type == "work" then
       [
-        iterm2
         raycast
         neovim
         git
@@ -47,7 +46,6 @@
       ]
     else
       [
-        iterm2
         telegram-desktop
         raycast
         spotify
