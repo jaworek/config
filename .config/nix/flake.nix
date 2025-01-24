@@ -34,9 +34,7 @@
           system,
           type ? "personal",
         }:
-        let
-        in
-        darwin.lib.darwinSystem rec {
+        darwin.lib.darwinSystem {
           inherit system;
           specialArgs = {
             inherit inputs;
