@@ -22,7 +22,6 @@
           git
           iterm2
           tailscale
-          transmission
           nixfmt-rfc-style
         ];
 
