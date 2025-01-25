@@ -17,7 +17,17 @@
   # release notes.
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
-  imports = if type == "work" then [ ./work-apps.nix ] else [ ./personal-apps.nix ];
+  imports =
+    if type == "work" then
+      [
+        ./common-apps.nix
+        ./work-apps.nix
+      ]
+    else
+      [
+        ./common-apps.nix
+        ./personal-apps.nix
+      ];
 
   programs.git = {
     enable = true;

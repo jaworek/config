@@ -5,15 +5,10 @@
 {
   home.packages = with pkgs; [
     telegram-desktop
-    raycast
     spotify
-    neovim
-    git
-    karabiner-elements
     discord
     #does not start for some reason
     #synology-drive-client
-    tmux
     yt-dlp
     go
     bun
@@ -26,15 +21,11 @@
     ffmpeg-full
     obsidian
     scrcpy
-    # fd and ripgrep are needed for telescope plugin in nvim
-    fd
-    ripgrep
     scrcpy
     watchman
     zulu17
     cocoapods
     rustup
-    delta
     #monero-gui
     #sweethome3d.application
     signal-desktop
