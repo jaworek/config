@@ -13,5 +13,6 @@
     karabiner-elements
     tmux
     delta
+    nixfmt-rfc-style
   ];
 }

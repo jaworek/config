@@ -15,6 +15,7 @@
       if type == "work" then
         [
           git
+          nixfmt-rfc-style
         ]
       else
         [
@@ -61,6 +62,8 @@
       [
         "homebrew/services"
         "FelixKratz/formulae"
+        "nikitabobko/tap"
+        "grishka/grishka"
       ];
 
   homebrew.brews =
@@ -103,8 +106,8 @@
         "synology-drive"
         "brave-browser"
         "cursor"
-        { name = "grishka/grishka/neardrop"; }
-        "nikitabobko/tap/aerospace"
+        "neardrop"
+        "aerospace"
         "blender"
         "bambu-studio"
       ];
