@@ -29,6 +29,7 @@
       gc = "git commit";
       gaa = "git add --all";
       gpu = "git push";
+      gpuf = "git push --force-with-lease";
       vim = "nvim";
       la = "ls -laG";
       darwin-rebuild-switch = "~/.config/nix/rebuild-and-switch.sh";
