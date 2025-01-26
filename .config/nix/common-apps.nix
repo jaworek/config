@@ -14,5 +14,6 @@
     tmux
     delta
     nixfmt-rfc-style
+    starship
   ];
 }
