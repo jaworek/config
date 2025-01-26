@@ -20,7 +20,6 @@
       else
         [
           git
-          tailscale
           nixfmt-rfc-style
         ];
 
