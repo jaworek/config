@@ -15,5 +15,6 @@
     delta
     nixfmt-rfc-style
     starship
+    lazygit
   ];
 }
