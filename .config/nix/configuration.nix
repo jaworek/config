@@ -224,6 +224,10 @@
 
     CustomUserPreferences = {
       NSGlobalDomain = {
+        AppleLanguages = [
+          "en-US"
+        ];
+
         # Sets Language & Region -> First day of week to "Monday"
         AppleFirstWeekday = {
           gregorian = 2;
