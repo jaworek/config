@@ -7,6 +7,8 @@
 {
   nix.settings.experimental-features = "nix-command flakes";
 
+  security.pam.enableSudoTouchIdAuth = true;
+
   environment = {
     # List packages installed in system profile. To search by name, run:
     # $ nix-env -qaP | grep wget
@@ -44,12 +46,6 @@
       "$PATH:$ANDROID_HOME/emulator"
       "$PATH:$ANDROID_HOME/platform-tools"
     ];
-
-    etc = {
-      "pam.d/sudo_local".text = ''
-        auth sufficient pam_tid.so
-      '';
-    };
   };
 
   homebrew.enable = true;
