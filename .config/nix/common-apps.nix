@@ -16,5 +16,7 @@
     nixfmt-rfc-style
     starship
     lazygit
+    # needed for nil-ls to install
+    rustup
   ];
 }

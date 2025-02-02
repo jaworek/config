@@ -25,7 +25,6 @@
     watchman
     zulu17
     cocoapods
-    rustup
     #monero-gui
     #sweethome3d.application
     signal-desktop
