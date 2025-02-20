@@ -18,5 +18,6 @@
     lazygit
     # needed for nil-ls to install
     rustup
+    arc-browser
   ];
 }

@@ -87,7 +87,6 @@
   homebrew.casks =
     if type == "work" then
       [
-        "arc"
         "firefox"
         "brave-browser"
         "minisim"
@@ -97,7 +96,6 @@
         # missing ARM version
         #"enpass"
         "steam"
-        "arc"
         "firefox"
         "synology-drive"
         "brave-browser"
@@ -171,7 +169,7 @@
       persistent-apps =
         if type == "work" then
           [
-            "/Applications/Arc.app"
+            "${pkgs.arc-browser}/Applications/Arc.app"
             "/System/Cryptexes/App/System/Applications/Safari.app"
             "/Applications/Firefox.app"
             "/System/Applications/Calendar.app"
@@ -185,7 +183,7 @@
           ]
         else
           [
-            "/Applications/Arc.app"
+            "${pkgs.arc-browser}/Applications/Arc.app"
             "/System/Cryptexes/App/System/Applications/Safari.app"
             "/Applications/Firefox.app"
             "/System/Applications/Messages.app"
