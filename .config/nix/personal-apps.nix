@@ -25,6 +25,7 @@
     watchman
     zulu17
     cocoapods
+    yt-dlp
     #monero-gui
     #sweethome3d.application
     signal-desktop
@@ -32,10 +33,7 @@
     # kicad
     # freecad
     #enpass
-    #firefox
     #steam
-    #vlc
     # orca-slicer
-    #the-unarchiver or unar (the one available in nix seems to be cli only)
   ];
 }

@@ -87,7 +87,7 @@
   homebrew.casks =
     if type == "work" then
       [
-        "firefox"
+        "zen-browser"
         "brave-browser"
         "minisim"
       ]
@@ -95,16 +95,13 @@
       [
         # missing ARM version
         #"enpass"
-        "steam"
-        "firefox"
+        "zen-browser"
         "synology-drive"
         "brave-browser"
         "cursor"
-        "neardrop"
         "aerospace"
         "blender"
         "bambu-studio"
-        "raspberry-pi-imager"
       ];
 
   homebrew.masApps =
@@ -113,7 +110,6 @@
     else
       {
         iMovie = 408981434;
-        Numbers = 409203825;
         Enpass = 732710998;
         Wireguard = 1451685025;
       };
@@ -172,7 +168,7 @@
           [
             "${pkgs.arc-browser}/Applications/Arc.app"
             "/System/Cryptexes/App/System/Applications/Safari.app"
-            "/Applications/Firefox.app"
+            "/Applications/Zen Browser.app"
             "/System/Applications/Calendar.app"
             "/System/Applications/Notes.app"
             "/System/Applications/System Settings.app"
@@ -186,7 +182,7 @@
           [
             "${pkgs.arc-browser}/Applications/Arc.app"
             "/System/Cryptexes/App/System/Applications/Safari.app"
-            "/Applications/Firefox.app"
+            "/Applications/Zen Browser.app"
             "/System/Applications/Messages.app"
             "/System/Applications/Calendar.app"
             "/System/Applications/Notes.app"
