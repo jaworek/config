@@ -17,7 +17,7 @@
     # blender
     keka
     iina
-    nodejs_20
+    nodejs_22
     ffmpeg-full
     obsidian
     scrcpy
@@ -35,6 +35,7 @@
     #firefox
     #steam
     #vlc
+    # orca-slicer
     #the-unarchiver or unar (the one available in nix seems to be cli only)
   ];
 }

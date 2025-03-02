@@ -7,7 +7,7 @@
 {
   nix.settings.experimental-features = "nix-command flakes";
 
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   environment = {
     # List packages installed in system profile. To search by name, run:
@@ -104,6 +104,7 @@
         "aerospace"
         "blender"
         "bambu-studio"
+        "raspberry-pi-imager"
       ];
 
   homebrew.masApps =
@@ -254,9 +255,6 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  # security.pam.enableSudoTouchIdAuth = true;
-
-  services.nix-daemon.enable = true;
   # services.karabiner-elements.enable = true;
 
   users.users.john = {
@@ -273,5 +271,5 @@
     };
   };
 
-  system.stateVersion = 4;
+  system.stateVersion = 5;
 }
