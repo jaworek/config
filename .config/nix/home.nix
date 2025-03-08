@@ -47,18 +47,18 @@
     };
   };
 
-  programs.zsh = {
-    enable = true;
-    autosuggestion = {
-      enable = true;
-    };
-    enableCompletion = true;
-    syntaxHighlighting.enable = true;
-  };
-
-  programs.starship = {
-    enable = true;
-  };
+  # programs.zsh = {
+  #   enable = true;
+  #   autosuggestion = {
+  #     enable = true;
+  #   };
+  #   enableCompletion = true;
+  #   syntaxHighlighting.enable = true;
+  # };
+  #
+  # programs.starship = {
+  #   enable = true;
+  # };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -75,6 +75,7 @@
     # '';
     ".config/karabiner".source = ./karabiner;
     ".config/tmux".source = config.lib.file.mkOutOfStoreSymlink ./tmux;
+    ".zshrc".source = config.lib.file.mkOutOfStoreSymlink ./zsh/.zshrc;
     ".config/ghostty".source = ./ghostty;
   };
 
