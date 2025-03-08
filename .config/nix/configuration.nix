@@ -90,6 +90,7 @@
         "zen-browser"
         "brave-browser"
         "minisim"
+        "visual-studio-code"
       ]
     else
       [
@@ -168,12 +169,12 @@
           [
             "${pkgs.arc-browser}/Applications/Arc.app"
             "/System/Cryptexes/App/System/Applications/Safari.app"
-            "/Applications/Zen Browser.app"
+            "/Applications/Zen.app"
             "/System/Applications/Calendar.app"
             "/System/Applications/Notes.app"
             "/System/Applications/System Settings.app"
             "/Applications/Ghostty.app"
-            # "${pkgs.vscode}/Applications/Visual Studio Code.app"
+            "${pkgs.vscode}/Applications/Visual Studio Code.app"
             "${pkgs.darwin.xcode_16_1}"
             "/Applications/Slack.app"
             "/Applications/1Password.app"
@@ -187,9 +188,7 @@
             "/System/Applications/Calendar.app"
             "/System/Applications/Notes.app"
             "/System/Applications/System Settings.app"
-            "${pkgs.spotify}/Applications/Spotify.app"
             "/Applications/Ghostty.app"
-            # "${pkgs.vscode}/Applications/Visual Studio Code.app"
             "${pkgs.darwin.xcode_16_1}"
             "${pkgs.darwin.xcode_16_1}/Contents/Developer/Applications/Simulator.app"
             "${pkgs.telegram-desktop}/Applications/Telegram.app"
