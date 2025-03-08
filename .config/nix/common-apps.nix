@@ -7,6 +7,8 @@
     # fd and ripgrep are needed for telescope plugin in nvim
     fd
     ripgrep
+    # fzf is needed for zsh
+    fzf
     raycast
     neovim
     git
