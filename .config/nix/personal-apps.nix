@@ -23,10 +23,17 @@
     zulu17
     cocoapods
     yt-dlp
+    spotify
     #monero-gui
     #sweethome3d.application
     signal-desktop
     gh
+    ollama
+    # cursor
+    zed-editor
+    syncthing
+    tailscale
+    # davinci-resolve
     # kicad
     # freecad
     #enpass
