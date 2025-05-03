@@ -25,13 +25,19 @@
     spotify
     #monero-gui
     #sweethome3d.application
-    signal-desktop
+    signal-desktop-bin
     gh
     ollama
     # cursor
     zed-editor
     syncthing
     tailscale
+    pnpm_9
+    jetbrains.webstorm
+    podman
+    # altserver-linux
+    # davinci-resolve
+    # lmstudio
     # davinci-resolve
     # kicad
     # freecad
