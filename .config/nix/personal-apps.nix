@@ -8,7 +8,6 @@
     discord
     #does not start for some reason
     #synology-drive-client
-    go
     bun
     ansible
     darwin.xcode_16_1
