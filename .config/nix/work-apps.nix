@@ -12,6 +12,7 @@
     cocoapods
     rustup
     jetbrains.webstorm
+    zed-editor
     gh
   ];
 }

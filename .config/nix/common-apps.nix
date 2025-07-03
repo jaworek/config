@@ -20,7 +20,6 @@
     lazygit
     # needed for nil-ls to install
     rustup
-    arc-browser
     # neeeded for gopls in nvim
     go
   ];

@@ -9,6 +9,8 @@
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
+  system.primaryUser = "john";
+
   environment = {
     # List packages installed in system profile. To search by name, run:
     # $ nix-env -qaP | grep wget
@@ -37,6 +39,7 @@
       darwin-rebuild-switch = "~/.config/nix/rebuild-and-switch.sh";
       darwin-rebuild-switch-work = "~/.config/nix/rebuild-and-switch-work.sh";
       darwin-cleanup = "nix-collect-garbage --delete-older-than 7d";
+      flake-update = "(cd /Users/john/.config/nix && nix flake update)";
       mkdir = "mkdir -p";
     };
 
@@ -78,6 +81,7 @@
         }
         "borders"
         "sketchybar"
+        "arc"
       ];
 
   homebrew.caskArgs = {
