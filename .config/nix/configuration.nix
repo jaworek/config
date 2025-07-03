@@ -5,7 +5,10 @@
   ...
 }:
 {
-  nix.settings.experimental-features = "nix-command flakes";
+  nix.settings = {
+    experimental-features = "nix-command flakes";
+    keep-going = true;
+  };
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
@@ -82,7 +85,6 @@
         }
         "borders"
         "sketchybar"
-        "arc"
       ];
 
   homebrew.caskArgs = {
@@ -96,6 +98,7 @@
         "brave-browser"
         "minisim"
         "visual-studio-code"
+        "arc"
       ]
     else
       [
@@ -124,6 +127,14 @@
   fonts.packages = [
     pkgs.nerd-fonts.jetbrains-mono
   ];
+
+  # Automatic updating
+  # system.autoUpgrade.enable = true;
+  # system.autoUpgrade.dates = "weekly";
+
+  nix.gc.automatic = true;
+  nix.gc.options = "--delete-older-than 7d";
+  nix.optimise.automatic = true;
 
   system.defaults = {
     NSGlobalDomain = {
@@ -173,7 +184,7 @@
       persistent-apps =
         if type == "work" then
           [
-            "${pkgs.arc-browser}/Applications/Arc.app"
+            "/Applications/Arc.app"
             "/System/Cryptexes/App/System/Applications/Safari.app"
             "/Applications/Zen.app"
             "/System/Applications/Calendar.app"
@@ -187,7 +198,7 @@
           ]
         else
           [
-            "${pkgs.arc-browser}/Applications/Arc.app"
+            "/Applications/Arc.app"
             "/System/Cryptexes/App/System/Applications/Safari.app"
             "/Applications/Zen Browser.app"
             "/System/Applications/Messages.app"
