@@ -23,5 +23,9 @@
     # neeeded for gopls in nvim
     go
     ghostty-bin
+    zed-editor
+    gh
+    code-cursor
+    localsend
   ];
 }

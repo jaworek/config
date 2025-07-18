@@ -29,7 +29,6 @@
     gh
     ollama
     # cursor
-    zed-editor
     syncthing
     tailscale
     pnpm_9
@@ -44,5 +43,7 @@
     #enpass
     #steam
     # orca-slicer
+    # vlc
+    # handbrake
   ];
 }

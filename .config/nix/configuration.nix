@@ -96,8 +96,6 @@
       [
         "zen"
         "brave-browser"
-        "minisim"
-        "visual-studio-code"
         "arc"
       ]
     else
@@ -108,8 +106,6 @@
         "synology-drive"
         "brave-browser"
         "arc"
-        "cursor"
-        "aerospace"
         "blender"
         "bambu-studio"
       ];
@@ -191,7 +187,6 @@
             "/System/Applications/Notes.app"
             "/System/Applications/System Settings.app"
             "${pkgs.ghostty-bin}/Applications/Ghostty.app"
-            "${pkgs.vscode}/Applications/Visual Studio Code.app"
             "${pkgs.darwin.xcode_16_1}"
             "/Applications/Slack.app"
             "/Applications/1Password.app"
@@ -207,7 +202,6 @@
             "/System/Applications/System Settings.app"
             "${pkgs.ghostty-bin}/Applications/Ghostty.app"
             "${pkgs.darwin.xcode_16_1}"
-            "${pkgs.darwin.xcode_16_1}/Contents/Developer/Applications/Simulator.app"
             "${pkgs.telegram-desktop}/Applications/Telegram.app"
             "${pkgs.signal-desktop-bin}/Applications/Signal.app"
             "${pkgs.discord}/Applications/Discord.app"
