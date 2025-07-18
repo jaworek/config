@@ -14,5 +14,6 @@
     jetbrains.webstorm
     zed-editor
     gh
+    code-cursor
   ];
 }

@@ -22,5 +22,6 @@
     rustup
     # neeeded for gopls in nvim
     go
+    ghostty-bin
   ];
 }

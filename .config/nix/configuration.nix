@@ -94,7 +94,7 @@
   homebrew.casks =
     if type == "work" then
       [
-        "zen-browser"
+        "zen"
         "brave-browser"
         "minisim"
         "visual-studio-code"
@@ -104,7 +104,7 @@
       [
         # missing ARM version
         #"enpass"
-        "zen-browser"
+        "zen"
         "synology-drive"
         "brave-browser"
         "arc"
@@ -190,7 +190,7 @@
             "/System/Applications/Calendar.app"
             "/System/Applications/Notes.app"
             "/System/Applications/System Settings.app"
-            "/Applications/Ghostty.app"
+            "${pkgs.ghostty-bin}/Applications/Ghostty.app"
             "${pkgs.vscode}/Applications/Visual Studio Code.app"
             "${pkgs.darwin.xcode_16_1}"
             "/Applications/Slack.app"
@@ -200,12 +200,12 @@
           [
             "/Applications/Arc.app"
             "/System/Cryptexes/App/System/Applications/Safari.app"
-            "/Applications/Zen Browser.app"
+            "/Applications/Zen.app"
             "/System/Applications/Messages.app"
             "/System/Applications/Calendar.app"
             "${pkgs.obsidian}/Applications/Obsidian.app"
             "/System/Applications/System Settings.app"
-            "/Applications/Ghostty.app"
+            "${pkgs.ghostty-bin}/Applications/Ghostty.app"
             "${pkgs.darwin.xcode_16_1}"
             "${pkgs.darwin.xcode_16_1}/Contents/Developer/Applications/Simulator.app"
             "${pkgs.telegram-desktop}/Applications/Telegram.app"

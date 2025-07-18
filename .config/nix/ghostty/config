@@ -7,3 +7,4 @@ window-colorspace = "display-p3"
 quit-after-last-window-closed = true
 copy-on-select = true
 theme = "JetBrains Darcula"
+auto-update = "off"
