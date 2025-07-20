@@ -18,47 +18,21 @@
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
   imports =
-    if type == "work" then
-      [
-        ./common-apps.nix
-        ./work-apps.nix
-      ]
-    else
-      [
-        ./common-apps.nix
-        ./personal-apps.nix
-      ];
-
-  programs.git = {
-    enable = true;
-    userName = "Jan Jaworski";
-    userEmail = if type == "work" then "jan.jaworski@callstack.com" else "jaworek3211@gmail.com";
-    extraConfig = {
-      core.editor = "/etc/profiles/per-user/john/bin/nvim";
-      push.autoSetupRemote = true;
-      init.defaultBranch = "master";
-      pull.rebase = true;
-      merge.conflictstyle = "zdiff3";
-      core.pager = "delta";
-      interactive.diffFilter = "delta --color-only";
-      delta = {
-        navigate = true;
-      };
-    };
-  };
-
-  # programs.zsh = {
-  #   enable = true;
-  #   autosuggestion = {
-  #     enable = true;
-  #   };
-  #   enableCompletion = true;
-  #   syntaxHighlighting.enable = true;
-  # };
-  #
-  # programs.starship = {
-  #   enable = true;
-  # };
+    [
+      ./common-apps.nix
+      ./home-manager/ghostty.nix
+      ./home-manager/git.nix
+    ]
+    ++ (
+      if type == "work" then
+        [
+          ./work-apps.nix
+        ]
+      else
+        [
+          ./personal-apps.nix
+        ]
+    );
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -76,7 +50,6 @@
     ".config/karabiner".source = ./karabiner;
     ".config/tmux".source = config.lib.file.mkOutOfStoreSymlink ./tmux;
     ".zshrc".source = config.lib.file.mkOutOfStoreSymlink ./zsh/.zshrc;
-    ".config/ghostty".source = ./ghostty;
   };
 
   # You can also manage environment variables but you will have to manually

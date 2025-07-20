@@ -39,8 +39,8 @@
       gpuf = "git push --force-with-lease";
       vim = "nvim";
       la = "ls -laG";
-      darwin-rebuild-switch = "~/.config/nix/rebuild-and-switch.sh";
-      darwin-rebuild-switch-work = "~/.config/nix/rebuild-and-switch-work.sh";
+      darwin-rebuild-switch = "sudo ~/.config/nix/rebuild-and-switch.sh";
+      darwin-rebuild-switch-work = "sudo ~/.config/nix/rebuild-and-switch-work.sh";
       darwin-cleanup = "nix-collect-garbage --delete-older-than 7d";
       flake-update = "(cd /Users/john/.config/nix && nix flake update)";
       mkdir = "mkdir -p";
@@ -157,35 +157,33 @@
       mru-spaces = false;
 
       persistent-apps =
-        if type == "work" then
-          [
-            "/Applications/Arc.app"
-            "/System/Cryptexes/App/System/Applications/Safari.app"
-            "/Applications/Zen.app"
-            "/System/Applications/Calendar.app"
-            "/System/Applications/Notes.app"
-            "/System/Applications/System Settings.app"
-            "${pkgs.ghostty-bin}/Applications/Ghostty.app"
-            "${pkgs.darwin.xcode_16_1}"
-            "/Applications/Slack.app"
-            "/Applications/1Password.app"
-          ]
-        else
-          [
-            "/Applications/Arc.app"
-            "/System/Cryptexes/App/System/Applications/Safari.app"
-            "/Applications/Zen.app"
-            "/System/Applications/Messages.app"
-            "/System/Applications/Calendar.app"
-            "${pkgs.obsidian}/Applications/Obsidian.app"
-            "/System/Applications/System Settings.app"
-            "${pkgs.ghostty-bin}/Applications/Ghostty.app"
-            "${pkgs.darwin.xcode_16_1}"
-            "${pkgs.telegram-desktop}/Applications/Telegram.app"
-            "${pkgs.signal-desktop-bin}/Applications/Signal.app"
-            "${pkgs.discord}/Applications/Discord.app"
-            "${pkgs.enpass-mac}/Applications/Enpass.app"
-          ];
+        [
+          "/Applications/Arc.app"
+          "/System/Cryptexes/App/System/Applications/Safari.app"
+          "/Applications/Zen.app"
+          "/System/Applications/System Settings.app"
+          "${pkgs.ghostty-bin}/Applications/Ghostty.app"
+          "${pkgs.darwin.xcode_16_1}"
+        ]
+        ++ (
+          if type == "work" then
+            [
+              "/System/Applications/Calendar.app"
+              "/System/Applications/Notes.app"
+              "/Applications/Slack.app"
+              "/Applications/1Password.app"
+            ]
+          else
+            [
+              "/System/Applications/Messages.app"
+              "/System/Applications/Calendar.app"
+              "${pkgs.obsidian}/Applications/Obsidian.app"
+              "${pkgs.telegram-desktop}/Applications/Telegram.app"
+              "${pkgs.signal-desktop-bin}/Applications/Signal.app"
+              "${pkgs.discord}/Applications/Discord.app"
+              "${pkgs.enpass-mac}/Applications/Enpass.app"
+            ]
+        );
 
       # Disable hot corners
       wvous-bl-corner = 1;

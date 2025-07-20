@@ -12,5 +12,6 @@
     cocoapods
     rustup
     jetbrains.webstorm
+    _1password-gui
   ];
 }
