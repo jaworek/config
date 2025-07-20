@@ -100,13 +100,10 @@
       ]
     else
       [
-        # missing ARM version
-        #"enpass"
         "zen"
         "synology-drive"
         "brave-browser"
         "arc"
-        "blender"
         "bambu-studio"
       ];
 
@@ -116,7 +113,6 @@
     else
       {
         iMovie = 408981434;
-        Enpass = 732710998;
         Wireguard = 1451685025;
       };
 
@@ -205,7 +201,7 @@
             "${pkgs.telegram-desktop}/Applications/Telegram.app"
             "${pkgs.signal-desktop-bin}/Applications/Signal.app"
             "${pkgs.discord}/Applications/Discord.app"
-            "/Applications/Enpass.app"
+            "${pkgs.enpass-mac}/Applications/Enpass.app"
           ];
 
       # Disable hot corners

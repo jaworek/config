@@ -11,7 +11,7 @@
     bun
     ansible
     darwin.xcode_16_1
-    # blender
+    blender
     keka
     iina
     nodejs_22
@@ -40,7 +40,7 @@
     # davinci-resolve
     # kicad
     # freecad
-    #enpass
+    enpass-mac
     #steam
     # orca-slicer
     # vlc
