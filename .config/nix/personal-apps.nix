@@ -43,7 +43,10 @@
     enpass-mac
     #steam
     # orca-slicer
-    # vlc
+    # vlc-bin
     # handbrake
+    # aerospace
+    # jankyborders
+    # sketchybar
   ];
 }

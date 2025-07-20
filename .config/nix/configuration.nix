@@ -58,17 +58,6 @@
   homebrew.enable = true;
   homebrew.onActivation.cleanup = "zap";
 
-  homebrew.taps =
-    if type == "work" then
-      [ "homebrew/services" ]
-    else
-      [
-        "homebrew/services"
-        "FelixKratz/formulae"
-        "nikitabobko/tap"
-        "grishka/grishka"
-      ];
-
   homebrew.brews =
     if type == "work" then
       [
@@ -79,12 +68,6 @@
       ]
     else
       [
-        {
-          name = "asimov";
-          start_service = true;
-        }
-        "borders"
-        "sketchybar"
       ];
 
   homebrew.caskArgs = {
