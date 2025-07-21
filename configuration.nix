@@ -17,18 +17,10 @@
   environment = {
     # List packages installed in system profile. To search by name, run:
     # $ nix-env -qaP | grep wget
-    systemPackages =
-      with pkgs;
-      if type == "work" then
-        [
-          git
-          nixfmt-rfc-style
-        ]
-      else
-        [
-          git
-          nixfmt-rfc-style
-        ];
+    systemPackages = with pkgs; [
+      git
+      nixfmt-rfc-style
+    ];
 
     shellAliases = {
       g = "git";
@@ -75,20 +67,21 @@
   };
 
   homebrew.casks =
-    if type == "work" then
-      [
-        "zen"
-        "brave-browser"
-        "arc"
-      ]
-    else
-      [
-        "zen"
-        "synology-drive"
-        "brave-browser"
-        "arc"
-        "bambu-studio"
-      ];
+    [
+      "zen"
+      "brave-browser"
+      "arc"
+    ]
+    ++ (
+      if type == "work" then
+        [
+        ]
+      else
+        [
+          "synology-drive"
+          "bambu-studio"
+        ]
+    );
 
   homebrew.masApps =
     if type == "work" then
@@ -236,8 +229,6 @@
   };
 
   nixpkgs.config.allowUnfree = true;
-
-  # services.karabiner-elements.enable = true;
 
   users.users.john = {
     name = "john";
