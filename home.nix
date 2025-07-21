@@ -17,22 +17,21 @@
   # release notes.
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
-  imports =
-    [
-      ./apps/common.nix
-      ./home-manager/ghostty.nix
-      ./home-manager/git.nix
-    ]
-    ++ (
-      if type == "work" then
-        [
-          ./apps/work.nix
-        ]
-      else
-        [
-          ./apps/personal.nix
-        ]
-    );
+  imports = [
+    ./apps/common.nix
+    ./home-manager/ghostty.nix
+    ./home-manager/git.nix
+  ]
+  ++ (
+    if type == "work" then
+      [
+        ./apps/work.nix
+      ]
+    else
+      [
+        ./apps/personal.nix
+      ]
+  );
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

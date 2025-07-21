@@ -145,48 +145,6 @@ in
       NSWindowShouldDragOnGesture = true;
     };
 
-    dock = {
-      # Disables Desktop & Dock -> Dock -> Show suggested and recent apps in Dock
-      show-recents = false;
-
-      # Don’t rearrange spaces based on the most recent use
-      mru-spaces = false;
-
-      persistent-apps = [
-        "/Applications/Arc.app"
-        "/System/Cryptexes/App/System/Applications/Safari.app"
-        "/Applications/Zen.app"
-        "/System/Applications/System Settings.app"
-        "${pkgs.ghostty-bin}/Applications/Ghostty.app"
-        "${pkgs.darwin.xcode_16_1}"
-      ]
-      ++ (
-        if type == "work" then
-          [
-            "/System/Applications/Calendar.app"
-            "/System/Applications/Notes.app"
-            "/Applications/Slack.app"
-            "/Applications/1Password.app"
-          ]
-        else
-          [
-            "/System/Applications/Messages.app"
-            "/System/Applications/Calendar.app"
-            "${pkgs.obsidian}/Applications/Obsidian.app"
-            "${pkgs.telegram-desktop}/Applications/Telegram.app"
-            "${pkgs.signal-desktop-bin}/Applications/Signal.app"
-            "${pkgs.discord}/Applications/Discord.app"
-            "${pkgs.enpass-mac}/Applications/Enpass.app"
-          ]
-      );
-
-      # Disable hot corners
-      wvous-bl-corner = 1;
-      wvous-br-corner = 1;
-      wvous-tl-corner = 1;
-      wvous-tr-corner = 1;
-    };
-
     screensaver = {
       askForPasswordDelay = 0;
       askForPassword = true;
@@ -232,24 +190,15 @@ in
 
   nixpkgs.config.allowUnfree = true;
 
-  services.karabiner-elements = {
-    enable = true;
-    package = pkgs.karabiner-elements.overrideAttrs (old: {
-      version = "14.13.0";
-
-      src = pkgs.fetchurl {
-        inherit (old.src) url;
-        hash = "sha256-gmJwoht/Tfm5qMecmq1N6PSAIfWOqsvuHU8VDJY8bLw=";
-      };
-
-      dontFixup = true;
-    });
-  };
-
   users.users.${username} = {
     name = username;
     home = "/Users/${username}";
   };
+
+  imports = [
+    ./macos/dock.nix
+    ./macos/karabiner.nix
+  ];
 
   home-manager = {
     useGlobalPkgs = true;
