@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 set -e
 
@@ -21,4 +21,3 @@ sudo chflags hidden /nix
 
 #Enable Rosetta
 softwareupdate --install-rosetta --agree-to-license
-
