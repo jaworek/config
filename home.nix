@@ -46,10 +46,10 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
-    ".config/karabiner".source = ./karabiner;
-    ".config/tmux".source = config.lib.file.mkOutOfStoreSymlink ./tmux;
-    ".zshrc".source = config.lib.file.mkOutOfStoreSymlink ./zsh/.zshrc;
-    ".config/zed/settings.json".source = ./zed/settings.json;
+    ".config/karabiner".source = ./dotfiles/karabiner;
+    ".config/tmux".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/tmux;
+    ".zshrc".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/zsh/.zshrc;
+    ".config/zed/settings.json".source = ./dotfiles/zed/settings.json;
   };
 
   # You can also manage environment variables but you will have to manually

@@ -41,13 +41,10 @@
   );
 
   homebrew.masApps =
-    { }
-    ++ (
-      if type == "work" then
-        { }
-      else
-        {
-          Wireguard = 1451685025;
-        }
-    );
+    if type == "work" then
+      { }
+    else
+      {
+        Wireguard = 1451685025;
+      };
 }

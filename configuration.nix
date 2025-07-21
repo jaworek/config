@@ -35,7 +35,7 @@ in
       gpu = "git push";
       gpuf = "git push --force-with-lease";
       vim = "nvim";
-      la = "ls -laG";
+      la = "ls -oaGh";
       darwin-rebuild-switch = "sudo ~/.config/nix/rebuild-and-switch.sh";
       darwin-rebuild-switch-work = "sudo ~/.config/nix/rebuild-and-switch-work.sh";
       darwin-cleanup = "sudo nix-collect-garbage --delete-older-than 7d";
