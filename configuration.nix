@@ -17,6 +17,7 @@ in
   security.pam.services.sudo_local.touchIdAuth = true;
 
   system.primaryUser = username;
+  system.startup.chime = false;
 
   environment = {
     # List packages installed in system profile. To search by name, run:
@@ -156,6 +157,11 @@ in
       Sound = true;
     };
 
+    screencapture = {
+      show-thumbnail = true;
+      target = "clipboard";
+    };
+
     CustomUserPreferences = {
       NSGlobalDomain = {
         AppleLanguages = [
@@ -208,6 +214,12 @@ in
       inherit type;
     };
   };
+
+  system.activationScripts.preActivation.text = ''
+    if ! xcode-select --version 2>/dev/null; then
+      xcode-select --install
+    fi
+  '';
 
   system.stateVersion = 5;
 }

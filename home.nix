@@ -49,6 +49,7 @@
     ".config/karabiner".source = ./karabiner;
     ".config/tmux".source = config.lib.file.mkOutOfStoreSymlink ./tmux;
     ".zshrc".source = config.lib.file.mkOutOfStoreSymlink ./zsh/.zshrc;
+    ".config/zed/settings.json".source = ./zed/settings.json;
   };
 
   # You can also manage environment variables but you will have to manually

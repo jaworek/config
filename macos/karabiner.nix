@@ -7,6 +7,7 @@
 }:
 {
 
+  # needed until https://github.com/nix-darwin/nix-darwin/issues/1041 is fixed
   services.karabiner-elements = {
     enable = true;
     package = pkgs.karabiner-elements.overrideAttrs (old: {
