@@ -4,6 +4,10 @@
   type ? "personal",
   ...
 }:
+
+let
+  username = "john";
+in
 {
   nix.settings = {
     experimental-features = "nix-command flakes";
@@ -12,7 +16,7 @@
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
-  system.primaryUser = "john";
+  system.primaryUser = username;
 
   environment = {
     # List packages installed in system profile. To search by name, run:
@@ -33,8 +37,8 @@
       la = "ls -laG";
       darwin-rebuild-switch = "sudo ~/.config/nix/rebuild-and-switch.sh";
       darwin-rebuild-switch-work = "sudo ~/.config/nix/rebuild-and-switch-work.sh";
-      darwin-cleanup = "nix-collect-garbage --delete-older-than 7d";
-      flake-update = "(cd /Users/john/.config/nix && nix flake update)";
+      darwin-cleanup = "sudo nix-collect-garbage --delete-older-than 7d";
+      flake-update = "(cd /Users/${username}/.config/nix && nix flake update)";
       mkdir = "mkdir -p";
       docker = "podman";
     };
@@ -66,22 +70,21 @@
     no_quarantine = true;
   };
 
-  homebrew.casks =
-    [
-      "zen"
-      "brave-browser"
-      "arc"
-    ]
-    ++ (
-      if type == "work" then
-        [
-        ]
-      else
-        [
-          "synology-drive"
-          "bambu-studio"
-        ]
-    );
+  homebrew.casks = [
+    "zen"
+    "brave-browser"
+    "arc"
+  ]
+  ++ (
+    if type == "work" then
+      [
+      ]
+    else
+      [
+        "synology-drive"
+        "bambu-studio"
+      ]
+  );
 
   homebrew.masApps =
     if type == "work" then
@@ -149,34 +152,33 @@
       # Don’t rearrange spaces based on the most recent use
       mru-spaces = false;
 
-      persistent-apps =
-        [
-          "/Applications/Arc.app"
-          "/System/Cryptexes/App/System/Applications/Safari.app"
-          "/Applications/Zen.app"
-          "/System/Applications/System Settings.app"
-          "${pkgs.ghostty-bin}/Applications/Ghostty.app"
-          "${pkgs.darwin.xcode_16_1}"
-        ]
-        ++ (
-          if type == "work" then
-            [
-              "/System/Applications/Calendar.app"
-              "/System/Applications/Notes.app"
-              "/Applications/Slack.app"
-              "/Applications/1Password.app"
-            ]
-          else
-            [
-              "/System/Applications/Messages.app"
-              "/System/Applications/Calendar.app"
-              "${pkgs.obsidian}/Applications/Obsidian.app"
-              "${pkgs.telegram-desktop}/Applications/Telegram.app"
-              "${pkgs.signal-desktop-bin}/Applications/Signal.app"
-              "${pkgs.discord}/Applications/Discord.app"
-              "${pkgs.enpass-mac}/Applications/Enpass.app"
-            ]
-        );
+      persistent-apps = [
+        "/Applications/Arc.app"
+        "/System/Cryptexes/App/System/Applications/Safari.app"
+        "/Applications/Zen.app"
+        "/System/Applications/System Settings.app"
+        "${pkgs.ghostty-bin}/Applications/Ghostty.app"
+        "${pkgs.darwin.xcode_16_1}"
+      ]
+      ++ (
+        if type == "work" then
+          [
+            "/System/Applications/Calendar.app"
+            "/System/Applications/Notes.app"
+            "/Applications/Slack.app"
+            "/Applications/1Password.app"
+          ]
+        else
+          [
+            "/System/Applications/Messages.app"
+            "/System/Applications/Calendar.app"
+            "${pkgs.obsidian}/Applications/Obsidian.app"
+            "${pkgs.telegram-desktop}/Applications/Telegram.app"
+            "${pkgs.signal-desktop-bin}/Applications/Signal.app"
+            "${pkgs.discord}/Applications/Discord.app"
+            "${pkgs.enpass-mac}/Applications/Enpass.app"
+          ]
+      );
 
       # Disable hot corners
       wvous-bl-corner = 1;
@@ -230,15 +232,29 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  users.users.john = {
-    name = "john";
-    home = "/Users/john";
+  services.karabiner-elements = {
+    enable = true;
+    package = pkgs.karabiner-elements.overrideAttrs (old: {
+      version = "14.13.0";
+
+      src = pkgs.fetchurl {
+        inherit (old.src) url;
+        hash = "sha256-gmJwoht/Tfm5qMecmq1N6PSAIfWOqsvuHU8VDJY8bLw=";
+      };
+
+      dontFixup = true;
+    });
+  };
+
+  users.users.${username} = {
+    name = username;
+    home = "/Users/${username}";
   };
 
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.john = import ./home.nix;
+    users.${username} = import ./home.nix;
     extraSpecialArgs = {
       inherit type;
     };

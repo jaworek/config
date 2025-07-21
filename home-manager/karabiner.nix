@@ -1,4 +1,10 @@
-{ }:
+{
+  config,
+  lib,
+  pkgs,
+  type,
+  ...
+}:
 {
 
   services.karabiner-elements = {

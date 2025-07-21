@@ -19,18 +19,18 @@
 
   imports =
     [
-      ./common-apps.nix
+      ./apps/common.nix
       ./home-manager/ghostty.nix
       ./home-manager/git.nix
     ]
     ++ (
       if type == "work" then
         [
-          ./work-apps.nix
+          ./apps/work.nix
         ]
       else
         [
-          ./personal-apps.nix
+          ./apps/personal.nix
         ]
     );
 
