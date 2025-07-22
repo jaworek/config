@@ -1,0 +1,49 @@
+---
+globs: dotfiles/**/*
+description: "Dotfiles organization and management guidelines"
+---
+
+# Dotfiles Management
+
+## Organization Structure
+
+The [dotfiles/](mdc:dotfiles/) directory contains configuration files for various applications:
+
+- **[aerospace/](mdc:dotfiles/aerospace/)** - Aerospace window manager configuration
+- **[karabiner/](mdc:dotfiles/karabiner/)** - Karabiner-Elements key mapping configuration  
+- **[sketchybar/](mdc:dotfiles/sketchybar/)** - SketchyBar status bar configuration
+- **[starship/](mdc:dotfiles/starship/)** - Starship prompt configuration
+- **[tmux/](mdc:dotfiles/tmux/)** - Tmux terminal multiplexer configuration and plugins
+- **[zed/](mdc:dotfiles/zed/)** - Zed editor settings
+- **[zsh/](mdc:dotfiles/zsh/)** - Zsh shell configuration
+
+## Linking Strategy
+
+Two types of linking are used in [home.nix](mdc:home.nix):
+
+### Static Symlinks
+For configurations that don't need live editing:
+```nix
+".config/karabiner".source = ./dotfiles/karabiner;
+".config/zed/settings.json".source = ./dotfiles/zed/settings.json;
+```
+
+### Out-of-Store Symlinks  
+For configurations that need live editing (preferable for development):
+```nix
+".config/tmux".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/tmux;
+".zshrc".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/zsh/.zshrc;
+```
+
+## Adding New Dotfiles
+
+1. **Create the configuration** in the appropriate subdirectory under [dotfiles/](mdc:dotfiles/)
+2. **Add the symlink** in [home.nix](mdc:home.nix) home.file section
+3. **Choose linking method** based on whether you need live editing
+4. **Rebuild configuration** to apply changes
+
+## Plugin Management
+
+- **Tmux plugins** are managed in [dotfiles/tmux/plugins/](mdc:dotfiles/tmux/plugins/)
+- Keep plugin configurations version-controlled
+- Document any external dependencies in comments

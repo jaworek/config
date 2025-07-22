@@ -1,0 +1,39 @@
+---
+globs: *.nix
+---
+
+# Nix Development Guidelines
+
+## Code Style and Formatting
+
+- Use `nixfmt-rfc-style` for consistent formatting (available in system packages)
+- Run `nixfmt-rfc-style *.nix` before committing changes
+- Use 2-space indentation consistently
+- Place imports at the top of files, before the main expression
+
+## Configuration Organization
+
+- **Type-based configurations**: Use the `type` parameter to distinguish between "personal" and "work" configurations
+- **Conditional imports**: Use pattern `if type == "work" then [./work-specific.nix] else [./personal.nix]`
+- **Modular structure**: Split configurations into logical modules (apps, system, home-manager)
+
+## Best Practices
+
+- **Package management**: Add system packages to [configuration.nix](mdc:configuration.nix), user packages to app configs
+- **Shell aliases**: Define common aliases in [configuration.nix](mdc:configuration.nix) environment.shellAliases
+- **Home Manager**: Use [home.nix](mdc:home.nix) for user-space configurations and dotfile management
+- **Flake inputs**: Keep inputs in [flake.nix](mdc:flake.nix) up to date, use `nix flake update` regularly
+
+## File Patterns
+
+- Use `config.lib.file.mkOutOfStoreSymlink` for dotfiles that need live editing (like tmux, zsh)
+- Use direct source linking for static configurations
+- Keep host-specific configurations in [hosts/](mdc:hosts/) directory
+- Platform-specific code goes in [macos/](mdc:macos/) or [linux/](mdc:linux/) directories
+
+## Testing Changes
+
+- Use `sudo ~/.config/nix/rebuild-and-switch.sh` for personal config
+- Use `sudo ~/.config/nix/rebuild-and-switch-work.sh` for work config  
+- Always test changes before committing
+- Use `darwin-cleanup` alias to clean up old generations

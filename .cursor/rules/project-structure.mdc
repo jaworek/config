@@ -1,0 +1,37 @@
+---
+alwaysApply: true
+---
+
+# Nix Darwin Configuration Project Structure
+
+This is a Nix Darwin configuration repository that manages a macOS system and home environment.
+
+## Main Entry Points
+
+- **[flake.nix](mdc:flake.nix)** - Primary flake configuration defining inputs, outputs, and darwin configurations for both `john` (personal) and `work` configurations
+- **[configuration.nix](mdc:configuration.nix)** - System-level Darwin configuration including packages, shell aliases, and system settings
+- **[home.nix](mdc:home.nix)** - Home Manager configuration that imports app configurations and manages dotfiles
+
+## Directory Structure
+
+- **[apps/](mdc:apps/)** - Application configurations split by usage:
+  - [common.nix](mdc:apps/common.nix) - Shared applications
+  - [personal.nix](mdc:apps/personal.nix) - Personal-only applications  
+  - [work.nix](mdc:apps/work.nix) - Work-specific applications
+- **[home-manager/](mdc:home-manager/)** - Specific home-manager module configurations
+- **[hosts/](mdc:hosts/)** - Host-specific configurations for different machines
+- **[dotfiles/](mdc:dotfiles/)** - Managed dotfiles for various applications
+- **[macos/](mdc:macos/)** - macOS-specific configurations (dock, homebrew, karabiner)
+- **[linux/](mdc:linux/)** - Linux-specific configurations
+
+## Build Scripts
+
+- **[rebuild-and-switch.sh](mdc:rebuild-and-switch.sh)** - Rebuild and switch personal configuration
+- **[rebuild-and-switch-work.sh](mdc:rebuild-and-switch-work.sh)** - Rebuild and switch work configuration
+- **[install.sh](mdc:install.sh)** - Initial installation script
+
+## Configuration Types
+
+The system supports two configuration types controlled by the `type` parameter:
+- `"personal"` (default) - Uses personal apps and configurations
+- `"work"` - Uses work-specific apps and configurations

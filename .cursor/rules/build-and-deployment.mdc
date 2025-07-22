@@ -1,0 +1,64 @@
+---
+globs: *.sh
+description: "Build scripts and deployment process guidelines"
+---
+
+# Build and Deployment Process
+
+## Build Scripts
+
+### Personal Configuration
+**[rebuild-and-switch.sh](mdc:rebuild-and-switch.sh)**
+- Rebuilds and switches to the `john` configuration
+- Use: `sudo ~/.config/nix/rebuild-and-switch.sh`
+- Shell alias: `darwin-rebuild-switch`
+
+### Work Configuration  
+**[rebuild-and-switch-work.sh](mdc:rebuild-and-switch-work.sh)**
+- Rebuilds and switches to the `work` configuration  
+- Use: `sudo ~/.config/nix/rebuild-and-switch-work.sh`
+- Shell alias: `darwin-rebuild-switch-work`
+
+### Installation
+**[install.sh](mdc:install.sh)**
+- Initial system installation script
+- Sets up Nix Darwin and applies initial configuration
+
+## Available Shell Aliases
+
+Defined in [configuration.nix](mdc:configuration.nix):
+
+### Git Shortcuts
+- `g` → `git`
+- `gs` → `git status`  
+- `gc` → `git commit`
+- `gaa` → `git add --all`
+- `gpu` → `git push`
+- `gpuf` → `git push --force-with-lease`
+
+### Darwin Management
+- `darwin-rebuild-switch` → Rebuild personal config
+- `darwin-rebuild-switch-work` → Rebuild work config
+- `darwin-cleanup` → Clean up old generations (7+ days)
+- `flake-update` → Update flake inputs
+
+### System
+- `vim` → `nvim`
+- `la` → `ls -oaGh`
+- `mkdir` → `mkdir -p`
+- `docker` → `podman`
+
+## Deployment Workflow
+
+1. **Make changes** to relevant configuration files
+2. **Format code** with `nixfmt-rfc-style` if editing .nix files
+3. **Test build** before switching (optional): `nix build .#darwinConfigurations.john.system`
+4. **Apply changes** with appropriate rebuild script
+5. **Verify configuration** is working correctly
+6. **Commit changes** to version control
+
+## Maintenance
+
+- **Update inputs**: Use `flake-update` alias regularly
+- **Clean old generations**: Use `darwin-cleanup` alias weekly
+- **Backup**: Ensure configurations are committed to git before major changes
