@@ -27,5 +27,6 @@
     gh
     code-cursor
     localsend
+    claude-code
   ];
 }

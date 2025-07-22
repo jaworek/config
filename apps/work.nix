@@ -13,5 +13,6 @@
     rustup
     jetbrains.webstorm
     _1password-gui
+    eas-cli
   ];
 }
