@@ -27,6 +27,7 @@
     gh
     code-cursor
     localsend
+    gemini-cli
     claude-code
   ];
 }
