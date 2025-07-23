@@ -29,5 +29,7 @@
     localsend
     gemini-cli
     claude-code
+    brave
+    arc-browser
   ];
 }

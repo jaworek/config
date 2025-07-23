@@ -26,8 +26,6 @@
 
   homebrew.casks = [
     "zen"
-    "brave-browser"
-    "arc"
   ]
   ++ (
     if type == "work" then
