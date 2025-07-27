@@ -6,6 +6,10 @@
 }:
 
 {
+  home.packages = with pkgs; [
+    ghostty-bin
+  ];
+
   programs.ghostty = {
     enable = true;
     package = pkgs.ghostty-bin;
