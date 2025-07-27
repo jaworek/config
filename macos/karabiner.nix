@@ -6,6 +6,13 @@
   ...
 }:
 {
+  home.packages = with pkgs; [
+    karabiner-elements
+  ];
+  
+  home.file = {
+    ".config/karabiner".source = ../dotfiles/karabiner;
+  };
 
   # needed until https://github.com/nix-darwin/nix-darwin/issues/1041 is fixed
   services.karabiner-elements = {
