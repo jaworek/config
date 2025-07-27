@@ -7,6 +7,8 @@
 
 let
   username = "john";
+  isDarwin = pkgs.stdenv.isDarwin;
+  isLinux = pkgs.stdenv.isLinux;
 in
 {
   nix.settings = {

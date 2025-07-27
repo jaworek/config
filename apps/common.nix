@@ -31,5 +31,6 @@
     claude-code
     brave
     arc-browser
+    scrcpy
   ];
 }

@@ -21,6 +21,7 @@
       interactive.diffFilter = "delta --color-only";
       url."ssh://git@github.com/".insteadof = "https://github.com/";
       url."https://".insteadof = "git://";
+      github.user = "jaworek";
       delta = {
         navigate = true;
       };
