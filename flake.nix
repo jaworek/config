@@ -2,11 +2,12 @@
   description = "MacOS system configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     darwin.url = "github:LnL7/nix-darwin";
-    darwin.inputs.nixpkgs.follows = "nixpkgs";
+    darwin.inputs.nixpkgs.follows = "nixpkgs-unstable";
     home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
   outputs =
@@ -14,6 +15,7 @@
       self,
       darwin,
       nixpkgs,
+      nixpkgs-unstable,
       home-manager,
       ...
     }@inputs:
@@ -24,7 +26,7 @@
         home-manager.darwinModules.home-manager
         {
           nix.registry = {
-            nixpkgs.flake = nixpkgs;
+            nixpkgs.flake = nixpkgs-unstable;
           };
         }
       ];
