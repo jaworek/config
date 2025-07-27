@@ -55,6 +55,13 @@
         };
     in
     {
+      nixosConfigurations = {
+        vm-aarch64 = {
+          system = "aarch64-linux";
+          user = "john";
+        };
+      };
+
       # Build darwin flake using:
       darwinConfigurations = {
         john = configuration { system = "aarch64-darwin"; };

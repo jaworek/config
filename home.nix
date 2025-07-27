@@ -21,6 +21,7 @@
     ./apps/common.nix
     ./home-manager/ghostty.nix
     ./home-manager/git.nix
+    ./home-manager/aerospace.nix
   ]
   ++ (
     if type == "work" then
