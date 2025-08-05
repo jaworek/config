@@ -11,7 +11,6 @@
     fzf
     raycast
     neovim
-    git
     karabiner-elements
     tmux
     delta
@@ -28,7 +27,6 @@
     localsend
     gemini-cli
     claude-code
-    brave
     arc-browser
     scrcpy
   ];
