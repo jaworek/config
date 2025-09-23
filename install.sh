@@ -17,6 +17,7 @@ sudo mv /etc/nix/nix.conf /etc/nix/nix.conf.before-nix-darwin
 sudo chflags hidden /nix
 
 # TODO: This command is going to fail, let's make a pause here to let me download Xcode and add it to the store, require me to press enter to continue
+# download it from: https://xcodereleases.com/
 /nix/var/nix/profiles/default/bin/nix --extra-experimental-features "nix-command flakes" run nix-darwin -- switch --flake ~/.config/nix
 
 #Enable Rosetta

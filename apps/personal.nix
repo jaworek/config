@@ -10,8 +10,8 @@
     # synology-drive-client
     bun
     ansible
-    darwin.xcode_16_1
-    blender
+    xcode
+    # blender
     keka
     iina
     ffmpeg-full

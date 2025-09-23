@@ -42,6 +42,7 @@ in
     systemPath = [
       "/opt/homebrew/bin"
       "$HOME/Library/Android/sdk"
+      "/Users/john/Library/Python/3.9/bin"
       "$PATH:$ANDROID_HOME/emulator"
       "$PATH:$ANDROID_HOME/platform-tools"
     ];
@@ -155,7 +156,7 @@ in
   imports = [
     ./macos/dock.nix
     ./macos/homebrew.nix
-    ./macos/karabiner.nix
+    # ./macos/karabiner.nix
   ];
 
   home-manager = {

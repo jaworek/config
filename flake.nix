@@ -46,6 +46,7 @@
             {
               nixpkgs.overlays = [
                 (self: super: {
+                  xcode = super.darwin.requireXcode "26_Apple_silicon" "sha256-dlfZ2sM6a9pUPdukoMoqvQAj7EEUyj0a/VkXKwkkFT8=";
                   # neovim = (import nixpkgs-unstable { inherit system; }).neovim;
                   # darwin.xcode_16_1 = (import nixpkgs-unstable { inherit system; }).darwin.xcode_16_1;
                 })
