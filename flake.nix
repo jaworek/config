@@ -36,6 +36,19 @@
           system,
           type ? "personal",
         }:
+        let
+          pkgs = import inputs.nixpkgs {
+            inherit system;
+            config.allowUnfreePredicate =
+              pkg:
+              builtins.elem (nixpkgs.lib.getName pkg) [
+                "arc-browser"
+              ];
+            config.permittedInsecurePackages = [
+              "arc-browser-1.109.0-67185"
+            ];
+          };
+        in
         darwin.lib.darwinSystem {
           inherit system;
           specialArgs = {
@@ -49,6 +62,7 @@
                   xcode = super.darwin.requireXcode "26_Apple_silicon" "sha256-dlfZ2sM6a9pUPdukoMoqvQAj7EEUyj0a/VkXKwkkFT8=";
                   # neovim = (import nixpkgs-unstable { inherit system; }).neovim;
                   # darwin.xcode_16_1 = (import nixpkgs-unstable { inherit system; }).darwin.xcode_16_1;
+                  arc-browser = pkgs.arc-browser;
                 })
               ];
             }
