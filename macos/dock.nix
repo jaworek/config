@@ -20,7 +20,7 @@
       "/Applications/Zen.app"
       "/System/Applications/System Settings.app"
       "${pkgs.ghostty-bin}/Applications/Ghostty.app"
-      "${pkgs.darwin.xcode}"
+      "${pkgs.darwin.xcode_26_Apple_silicon}"
     ]
     ++ (
       if type == "work" then

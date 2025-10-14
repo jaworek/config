@@ -5,7 +5,7 @@
 {
   home.packages = with pkgs; [
     bun
-    xcode
+    darwin.xcode_26_Apple_silicon
     scrcpy
     watchman
     zulu17

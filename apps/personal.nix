@@ -10,7 +10,7 @@
     # synology-drive-client
     bun
     ansible
-    xcode
+    darwin.xcode_26_Apple_silicon
     # blender
     keka
     iina
