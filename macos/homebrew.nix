@@ -12,7 +12,7 @@
     if type == "work" then
       [
         {
-          name = "node@20";
+          name = "node@24";
           link = true;
         }
       ]
