@@ -21,6 +21,7 @@
       "/System/Applications/System Settings.app"
       "${pkgs.ghostty-bin}/Applications/Ghostty.app"
       "${pkgs.darwin.xcode_26_Apple_silicon}"
+      "${pkgs.zed-editor}/Applications/Zed.app"
     ]
     ++ (
       if type == "work" then

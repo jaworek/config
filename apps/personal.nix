@@ -24,7 +24,7 @@
     ollama
     # cursor
     syncthing
-    tailscale
+    # tailscale - no gui
     jetbrains.webstorm
     podman
     # altserver-linux

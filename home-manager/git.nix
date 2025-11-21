@@ -9,9 +9,11 @@
 {
   programs.git = {
     enable = true;
-    userName = "Jan Jaworski";
-    userEmail = if type == "work" then "jan.jaworski@callstack.com" else "jaworek3211@gmail.com";
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Jan Jaworski";
+        email = if type == "work" then "jan.jaworski@callstack.com" else "jaworek3211@gmail.com";
+      };
       core.editor = "nvim";
       push.autoSetupRemote = true;
       init.defaultBranch = "master";
