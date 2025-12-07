@@ -10,18 +10,18 @@
     # synology-drive-client
     bun
     ansible
-    darwin.xcode_26_Apple_silicon
+    darwin.xcode_26_1_Apple_silicon
     # blender
     keka
     iina
     ffmpeg-full
     obsidian
     yt-dlp
-    spotify
+    # spotify
     # monero-gui
     # sweethome3d.application
     signal-desktop-bin
-    ollama
+    #ollama
     # cursor
     syncthing
     # tailscale - no gui

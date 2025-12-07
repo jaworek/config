@@ -11,10 +11,11 @@ let
   isLinux = pkgs.stdenv.isLinux;
 in
 {
-  nix.settings = {
-    experimental-features = "nix-command flakes";
-    keep-going = true;
-  };
+  nix.enable = false;
+  #nix.settings = {
+  #  experimental-features = "nix-command flakes";
+  #  keep-going = true;
+  #};
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
@@ -56,9 +57,9 @@ in
   # system.autoUpgrade.enable = true;
   # system.autoUpgrade.dates = "weekly";
 
-  nix.gc.automatic = true;
-  nix.gc.options = "--delete-older-than 7d";
-  nix.optimise.automatic = true;
+  #nix.gc.automatic = true;
+  #nix.gc.options = "--delete-older-than 7d";
+  #nix.optimise.automatic = true;
 
   system.defaults = {
     NSGlobalDomain = {
