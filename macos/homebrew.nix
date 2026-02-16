@@ -18,6 +18,10 @@
       ]
     else
       [
+        {
+          name = "node@24";
+          link = true;
+        }
       ];
 
   homebrew.caskArgs = {
@@ -35,6 +39,9 @@
       [
         "synology-drive"
         "bambu-studio"
+	"telegram"
+	"arc"
+	"llamabarn"
       ]
   );
 

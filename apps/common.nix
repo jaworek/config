@@ -27,7 +27,7 @@
     localsend
     gemini-cli
     claude-code
-    arc-browser
+    # arc-browser
     scrcpy
   ];
 }

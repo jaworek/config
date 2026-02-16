@@ -1,9 +1,14 @@
 {
   config,
+  pkgs,
   type ? "personal",
   ...
 }:
 
+let
+  tmuxConfigPath = "${config.home.homeDirectory}/.config/nix/dotfiles/tmux";
+  zshConfigPath = "${config.home.homeDirectory}/.config/nix/dotfiles/zsh";
+in
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -47,8 +52,8 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
     ".config/karabiner".source = ./dotfiles/karabiner;
-    ".config/tmux".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/tmux;
-    ".zshrc".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/zsh/.zshrc;
+    ".config/tmux".source = config.lib.file.mkOutOfStoreSymlink "${tmuxConfigPath}";
+    ".zshrc".source = config.lib.file.mkOutOfStoreSymlink "${zshConfigPath}/.zshrc";
     ".config/zed/settings.json".source = ./dotfiles/zed/settings.json;
   };
 

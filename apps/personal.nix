@@ -4,7 +4,8 @@
 }:
 {
   home.packages = with pkgs; [
-    telegram-desktop
+    # telegram-desktop - pasting images crashes app
+    terraform
     discord
     # does not start for some reason
     # synology-drive-client
@@ -21,7 +22,7 @@
     # monero-gui
     # sweethome3d.application
     signal-desktop-bin
-    #ollama
+    # ollama
     # cursor
     syncthing
     # tailscale - no gui
@@ -38,5 +39,7 @@
     # orca-slicer
     # vlc-bin
     # handbrake
+    # openshot-qt - broken due to CVEs and some other build error
+    opencode
   ];
 }

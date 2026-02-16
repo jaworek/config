@@ -15,7 +15,7 @@
     mru-spaces = false;
 
     persistent-apps = [
-      "${pkgs.arc-browser}/Applications/Arc.app"
+      "/Applications/Arc.app"
       "/System/Cryptexes/App/System/Applications/Safari.app"
       "/Applications/Zen.app"
       "/System/Applications/System Settings.app"
@@ -36,7 +36,7 @@
           "/System/Applications/Messages.app"
           "/System/Applications/Calendar.app"
           "${pkgs.obsidian}/Applications/Obsidian.app"
-          "${pkgs.telegram-desktop}/Applications/Telegram.app"
+          "/Applications/Telegram.app"
           "${pkgs.signal-desktop-bin}/Applications/Signal.app"
           "${pkgs.discord}/Applications/Discord.app"
           "${pkgs.enpass-mac}/Applications/Enpass.app"
