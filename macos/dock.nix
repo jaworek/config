@@ -21,7 +21,7 @@
       "/System/Applications/System Settings.app"
       "${pkgs.ghostty-bin}/Applications/Ghostty.app"
       "${pkgs.darwin.xcode_26_1_Apple_silicon}"
-      "${pkgs.zed-editor}/Applications/Zed.app"
+      "/Applications/Zed.app"
     ]
     ++ (
       if type == "work" then
@@ -37,9 +37,9 @@
           "/System/Applications/Calendar.app"
           "${pkgs.obsidian}/Applications/Obsidian.app"
           "/Applications/Telegram.app"
-          "${pkgs.signal-desktop-bin}/Applications/Signal.app"
+          "${pkgs.signal-desktop}/Applications/Signal.app"
           "${pkgs.discord}/Applications/Discord.app"
-          "${pkgs.enpass-mac}/Applications/Enpass.app"
+          "/Applications/Enpass.app"
         ]
     );
 

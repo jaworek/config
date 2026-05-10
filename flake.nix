@@ -2,7 +2,7 @@
   description = "MacOS system configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     darwin.url = "github:LnL7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -39,14 +39,14 @@
         let
           pkgs = import inputs.nixpkgs {
             inherit system;
-            config.allowUnfreePredicate =
-              pkg:
-              builtins.elem (nixpkgs.lib.getName pkg) [
-                "arc-browser"
-              ];
-            config.permittedInsecurePackages = [
-              "arc-browser-1.109.0-67185"
-            ];
+            # config.allowUnfreePredicate =
+            #   pkg:
+            #   builtins.elem (nixpkgs.lib.getName pkg) [
+            #     "arc-browser"
+            #   ];
+            # config.permittedInsecurePackages = [
+            #   "arc-browser-1.109.0-67185"
+            # ];
           };
         in
         darwin.lib.darwinSystem {
@@ -58,10 +58,10 @@
           modules = darwinModules ++ [
             {
               nixpkgs.overlays = [
-                (self: super: {
-                  # xcode = super.darwin.requireXcode "26_Apple_silicon" "sha256-dlfZ2sM6a9pUPdukoMoqvQAj7EEUyj0a/VkXKwkkFT8=";
-                  arc-browser = pkgs.arc-browser;
-                })
+                # (self: super: {
+                #   # xcode = super.darwin.requireXcode "26_Apple_silicon" "sha256-dlfZ2sM6a9pUPdukoMoqvQAj7EEUyj0a/VkXKwkkFT8=";
+                #   arc-browser = pkgs.arc-browser;
+                # })
               ];
             }
           ];

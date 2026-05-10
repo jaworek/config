@@ -12,6 +12,7 @@
     bun
     ansible
     darwin.xcode_26_1_Apple_silicon
+    pnpm
     # blender
     keka
     iina
@@ -21,8 +22,8 @@
     # spotify
     # monero-gui
     # sweethome3d.application
-    signal-desktop-bin
-    # ollama
+    signal-desktop
+    ollama
     # cursor
     syncthing
     # tailscale - no gui
@@ -41,5 +42,7 @@
     # handbrake
     # openshot-qt - broken due to CVEs and some other build error
     opencode
+    # mullvad-vpn
+    uv
   ];
 }

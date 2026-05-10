@@ -30,6 +30,7 @@
 
   homebrew.casks = [
     "zen"
+    "zed"
   ]
   ++ (
     if type == "work" then
@@ -39,9 +40,10 @@
       [
         "synology-drive"
         "bambu-studio"
-	"telegram"
-	"arc"
-	"llamabarn"
+        "telegram"
+        "arc"
+        "llamabarn"
+        "enpass"
       ]
   );
 

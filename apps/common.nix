@@ -14,20 +14,21 @@
     karabiner-elements
     tmux
     delta
-    nixfmt-rfc-style
+    nixfmt
     starship
     lazygit
     # needed for nil-ls to install
     rustup
     # neeeded for gopls in nvim
     go
-    zed-editor
+    # zed-editor
     gh
-    code-cursor
+    # code-cursor
     localsend
-    gemini-cli
-    claude-code
+    # gemini-cli
+    # claude-code
     # arc-browser
     scrcpy
+    jujutsu
   ];
 }
